@@ -12,7 +12,7 @@ function Header({ scrollToRef }) {
     const [hamburgerOpen, setHamburgerOpen] = useState(false);
 
     const styleBackground = {
-        backgroundImage: `url(./img/background-header-1.png)`,
+        backgroundImage: `url(./img/background-header-1.jpg)`,
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'bottom center',
         backgroundSize: 'auto 100%',

@@ -1,0 +1,23 @@
+$colorCountHeader: #ffffff;
+$bgAccentColor: #db011c;
+
+$colorModalButton: #f0f8ffc9;
+$bgModal: #3f3e3e3b;
+
+@mixin btn-card() {
+  color: $colorCountHeader;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 5px 10px;
+  background: $bgAccentColor;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  &:hover {
+    background-color: #70131eca;
+    transition: background-color 0.2s;
+  }
+  &:active {
+    opacity: 0.5;
+  }
+}

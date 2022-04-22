@@ -1,107 +1,102 @@
-import React, { useEffect, useState } from "react";
-// import { ReactDOM } from "react";
 import './header.scss';
-// import { Link, NavLink, Outlet } from 'react-router-dom';
-// import { useSelector } from "react-redux";
+import React, { useState } from "react";
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import PhoneAndroidIcon from '@mui/icons-material/PhoneAndroid';
-import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 import { grey } from '@mui/material/colors';
+import { HashLink as Link } from 'react-router-hash-link';
 
-function Header({ scrollToRef }) {
+
+function Header() {
     const [hamburgerOpen, setHamburgerOpen] = useState(false);
-
-    const styleBackground = {
-        backgroundImage: `url(./img/background-header-1.jpg)`,
-        backgroundRepeat: 'no-repeat',
-        backgroundPosition: 'bottom center',
-        backgroundSize: 'auto 100%',
-        // backgroundSize: 'cover',
-        height: '100vh',
-        backgroundAttachment: 'fixed'
-    }
-
     const color = grey[500];
 
     const toggleHamburger = (e) => {
-        if (e.target.className === 'header-nav-hamburger' ||
+        if (e.target.className === 'header-nav-link' ||
             e.target.className === 'check' ||
             e.target.className === 'check-span') {
             setHamburgerOpen(!hamburgerOpen);
         } else if (hamburgerOpen) {
             setHamburgerOpen(false);
         }
-        console.log(e.target.className);
     }
-
-    // useEffect(() => {
-    //     console.log(hamburgerOpen);
-    // }, [hamburgerOpen])
 
     return (
         <>
-            <div className="header-nav-wrap">
+            <div className="header">
                 <div className={hamburgerOpen ? "blur active" : "blur"} onClick={e => {
                     e.stopPropagation();
                     toggleHamburger(e)
                 }} />
                 <div className="container">
-                    <div className="header-nav">
-                        <div className="logo-wrap">
-                            {/* <NavLink style={({ isActive }) => isActive ? { borderBottom: "3px solid #ffffff" } : undefined} to='/'> */}
-                            <img className="logo-header"
-                                src="./kmk-logo.png"
-                                onMouseOver={e => e.currentTarget.src = "./kmk-logo-hover.png"}
-                                onMouseOut={e => e.currentTarget.src = "./kmk-logo.png"}
-                                onClick={(e) => {
-                                    window.scrollTo({ behavior: 'smooth', top: 0 })
-                                    toggleHamburger(e)
-                                }}
-                                alt="logo"
-                                height='75' />
-                            {/* </NavLink> */}
-                        </div>
+                    <div className="header-wrap">
+                        <img
+                            className="header-logo"
+                            src={process.env.PUBLIC_URL + '/kmk-logo.png'}
+                            onMouseOver={e => e.currentTarget.src = process.env.PUBLIC_URL + "/kmk-logo-hover.png"}
+                            onMouseOut={e => e.currentTarget.src = process.env.PUBLIC_URL + "/kmk-logo.png"}
+                            onClick={(e) => {
+                                window.scrollTo({ behavior: 'smooth', top: 0 });
+                                toggleHamburger(e)
+                            }}
+                            alt="logo"
+                            height='75' />
 
                         <nav className="header-nav-list-wrap">
                             <ul className={!hamburgerOpen ? "header-nav-list" : "header-nav-list active"}>
-                                {/* <li className="header-nav-item" id="header-nav-home" onClick={
-                                    (e) => {
-                                        window.scrollTo({ behavior: 'smooth', top: 0 })
-                                        toggleHamburger(e)
-                                    }}>Головна</li> */}
-                                <li className="header-nav-item item__about"
-                                    // id="header-nav-about"
-                                    onClick={
-                                        (e) => {
-                                            // e.preventDefault()
-                                            // e.stopPropagation()
-                                            scrollToRef(e)
-                                            toggleHamburger(e)
-                                        }}>
-                                    {/* <InfoOutlinedIcon htmlColor={color} /> */}
-                                    Про нас</li>
-                                <li className="header-nav-item item__services"
-                                    // id="header-nav-services" 
-                                    onClick={
-                                        (e) => {
-                                            scrollToRef(e)
-                                            toggleHamburger(e)
-                                        }}>Послуги</li>
-                                <li className="header-nav-item item__projects"
-                                    // id="header-nav-projects" 
-                                    onClick={
-                                        (e) => {
-                                            scrollToRef(e)
-                                            toggleHamburger(e)
-                                        }}>Проекти</li>
-                                <li className="header-nav-item item__contacts"
-                                    // id="header-nav-contacts" 
-                                    onClick={
-                                        (e) => {
-                                            scrollToRef(e)
-                                            toggleHamburger(e)
-                                        }}>Контакти</li>
+                                <li className="header-nav-item item-home">
+                                    <Link smooth to="#home"
+                                        className="header-nav-link"
+                                        onClick={e => toggleHamburger(e)}
+                                        scroll={() => window.scrollTo({ behavior: 'smooth', top: 0 })}
+                                    >
+                                        <img className="header-nav-item-icon" src={process.env.PUBLIC_URL + '/img/icon-home.svg'} alt="icon-home" />
+                                        Головна
+                                    </Link>
+                                </li>
+                                <li className="header-nav-item">
+                                    <Link smooth to="#about"
+                                        className="header-nav-link"
+                                        onClick={e => toggleHamburger(e)}
+                                        scroll={(el) => window.scrollTo({ behavior: 'smooth', top: el.offsetTop - 90 })}
+                                    >
+                                        <img className="header-nav-item-icon" src={process.env.PUBLIC_URL + '/img/icon-about.svg'} alt="icon-about" />
+                                        Про нас
+                                    </Link>
+                                </li>
+                                <li className="header-nav-item">
+                                    <Link smooth to='#services'
+                                        className="header-nav-link"
+                                        onClick={e => toggleHamburger(e)}
+                                        scroll={(el) => window.scrollTo({ behavior: 'smooth', top: el.offsetTop - 90 })}
+                                    >
+                                        <img className="header-nav-item-icon" src={process.env.PUBLIC_URL + '/img/icon-services.svg'} alt="icon-services" />
+                                        Послуги
+                                    </Link>
+                                </li>
+                                <li className="header-nav-item"
+                                >
+                                    <Link smooth to='#projects'
+                                        className="header-nav-link"
+                                        onClick={e => toggleHamburger(e)}
+                                        scroll={(el) => window.scrollTo({ behavior: 'smooth', top: el.offsetTop - 90 })}
+                                    >
+                                        <img className="header-nav-item-icon" src={process.env.PUBLIC_URL + '/img/icon-projects.svg'} alt="icon-projects" />
+                                        Проекти
+                                    </Link>
+                                </li>
+                                <li className="header-nav-item"
+                                >
+                                    <Link smooth to='#contacts'
+                                        className="header-nav-link"
+                                        onClick={e => toggleHamburger(e)}
+                                        scroll={(el) => window.scrollTo({ behavior: 'smooth', top: el.offsetTop - 90 })}
+                                    >
+                                        <img className="header-nav-item-icon" src={process.env.PUBLIC_URL + '/img/icon-contacts.svg'} alt="icon-contacts" />
+                                        Контакти
+                                    </Link>
+                                </li>
                             </ul>
+
                             <div className="header-contacts">
                                 <div className="header-contacts-link-wrap">
                                     <PhoneAndroidIcon htmlColor={color} />
@@ -131,13 +126,7 @@ function Header({ scrollToRef }) {
                     </div>
                 </div>
             </div>
-            <header className="header" style={styleBackground}>
-                <div className="header-hero-wrap">
-                    <h1 className="header-hero-title">ТОВ &laquo;КМКСТРОЙ&raquo;</h1>
-                    <p className="header-hero-subtitle">Будівельні роботи та</p>
-                    <p className="header-hero-subtitle">Промислові підлоги</p>
-                </div>
-            </header>
+
         </>
     )
 }

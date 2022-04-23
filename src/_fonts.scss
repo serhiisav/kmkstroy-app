@@ -159,3 +159,24 @@
   font-style: normal;
   font-display: swap;
 }
+
+@font-face {
+  font-family: "Stardos Stencil";
+  src: url("./font/StardosStencil-Regular.woff2") format("woff2"),
+    url("./font/StardosStencil-Regular.woff") format("woff"),
+    url("./font/StardosStencil-Regular.svg#StardosStencil-Regular")
+      format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Stardos Stencil";
+  src: url("./font/StardosStencil-Bold.woff2") format("woff2"),
+    url("./font/StardosStencil-Bold.woff") format("woff"),
+    url("./font/StardosStencil-Bold.svg#StardosStencil-Bold") format("svg");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}

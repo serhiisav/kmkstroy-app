@@ -1,5 +1,60 @@
 @import "../../variables";
 
 .section-about {
-  background-color: rgb(125, 105, 174);
+  width: 100%;
+  background: linear-gradient(to left, #4242429c, #dcdcdcd4),
+    url(../../../public/img/background-about-1-min.jpg);
+
+  // mix-blend-mode: multiply;
+  // backdrop-filter: blur(5px);
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 40px 0;
+}
+
+.about-wrap {
+  background: linear-gradient(to left, #dededeaf, #d9d7cfc6),
+    url(../../../public/img/background-about-2-min.jpg) left;
+  background-size: cover;
+  top: -20px;
+  position: relative;
+  max-width: 300px;
+  min-width: 250px;
+  box-shadow: 2px 2px 15px 8px rgba(107, 107, 107, 0.76);
+  padding: 20px 20px;
+  @media (min-width: 735px) {
+    max-width: 400px;
+    padding: 30px 50px;
+  }
+  @media (min-width: 945px) {
+    max-width: 500px;
+  }
+}
+.about-title {
+  margin: 0;
+  padding-bottom: 20px;
+  color: #0000004a;
+  font-size: 2em;
+  position: relative;
+  &::after {
+    content: "";
+    width: 100%;
+    height: 1px;
+    bottom: 0px;
+    left: 0;
+    position: absolute;
+    background-color: #32323225;
+  }
+}
+.about-subtitle {
+  margin: 20px 0;
+  font-size: 1.5em;
+  color: #00000089;
+}
+.about-description {
+  line-height: 1.5em;
+  text-align: justify;
+  color: #1d1d1de0;
 }

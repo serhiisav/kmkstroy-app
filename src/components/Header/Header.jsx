@@ -57,7 +57,7 @@ function Header() {
                                     <Link smooth to="#about"
                                         className="header-nav-link"
                                         onClick={e => toggleHamburger(e)}
-                                        scroll={(el) => window.scrollTo({ behavior: 'smooth', top: el.offsetTop - 90 })}
+                                        scroll={(el) => window.scrollTo({ behavior: 'smooth', top: el.offsetTop - 115 })}
                                     >
                                         <img className="header-nav-item-icon" src={process.env.PUBLIC_URL + '/img/icon-about.svg'} alt="icon-about" />
                                         Про нас
@@ -67,7 +67,7 @@ function Header() {
                                     <Link smooth to='#services'
                                         className="header-nav-link"
                                         onClick={e => toggleHamburger(e)}
-                                        scroll={(el) => window.scrollTo({ behavior: 'smooth', top: el.offsetTop - 90 })}
+                                        scroll={(el) => window.scrollTo({ behavior: 'smooth', top: el.offsetTop - 85 })}
                                     >
                                         <img className="header-nav-item-icon" src={process.env.PUBLIC_URL + '/img/icon-services.svg'} alt="icon-services" />
                                         Послуги

@@ -4,7 +4,7 @@ import './intro.scss'
 function Intro() {
 
     const styleBackground = {
-        backgroundImage: `url(${process.env.PUBLIC_URL + '/img/background-header-1.jpg'})`,
+        backgroundImage: `url(${process.env.PUBLIC_URL + '/img/background-header-1-min.jpg'})`,
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'bottom center',
         // backgroundSize: '100% auto',

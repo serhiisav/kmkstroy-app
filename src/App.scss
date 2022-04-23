@@ -1,17 +1,23 @@
+.main-page {
+  background-color: #e0e0e0c6;
+}
 .container {
-  // height: 100%;
-  // min-width: 320px;
+  box-sizing: border-box;
+
+  height: 100%;
+  min-width: 280px;
   // width: 100%;
   margin: 0 auto;
-  padding: 0 30px;
-  /* @media (min-width: 481px) {
+  padding: 0 10px;
+  @media (min-width: 481px) {
     min-width: 481px;
-    width: 100%;
+    // width: 100%;
     max-width: 992px;
+    padding: 0 30px;
   }
   @media (min-width: 993px) {
     min-width: 993px;
-    width: 100%;
+    // width: 100%;
     max-width: 1200px;
-  } */
+  }
 }

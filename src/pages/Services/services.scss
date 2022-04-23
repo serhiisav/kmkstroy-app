@@ -1,7 +1,47 @@
 @import "../../variables";
 
 .section-services {
-  // z-index: 1;
-  // position: relative;
-  background-color: indianred;
+  width: 100%;
+  background: linear-gradient(to bottom, #7d7d7d25, #d4d4d46c),
+    url(../../../public/img/background-services-3-min.jpg);
+
+  // background-color: rgba(17, 133, 235, 0.744);
+  // mix-blend-mode: multiply;
+  // backdrop-filter: blur(5px);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-attachment: fixed;
+  margin: 40px 0;
+}
+
+.services-wrap {
+  max-width: 300px;
+  // width: 100%;
+  min-width: 250px;
+  padding: 20px 10px;
+  margin-left: auto;
+
+  @media (min-width: 735px) {
+    max-width: 400px;
+    padding: 50px 50px;
+  }
+  @media (min-width: 945px) {
+    max-width: 500px;
+  }
+}
+.services-title {
+  margin: 0;
+  color: #ffffffd8;
+  font-size: 2em;
+}
+.services-list {
+  list-style: none;
+  padding: 10px 30px;
+  background: #2b2b2be1;
+}
+.services-item {
+  line-height: 1.5em;
+  color: #ffffffd8;
+  margin: 20px 0;
 }

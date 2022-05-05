@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/kmkstroy-app/static/css/main.0f35b6e3.css",
-    "main.js": "/kmkstroy-app/static/js/main.23ea70b8.js",
+    "main.js": "/kmkstroy-app/static/js/main.21bc370e.js",
     "static/media/background-services-3-min.jpg": "/kmkstroy-app/static/media/background-services-3-min.e69e575d291aa8ff1556.jpg",
     "static/media/background-about-1-min.jpg": "/kmkstroy-app/static/media/background-about-1-min.966ab89dc2f2be49cda3.jpg",
     "static/media/StardosStencil-Bold.svg": "/kmkstroy-app/static/media/StardosStencil-Bold.80f9e878750ea0603816.svg",
@@ -48,10 +48,10 @@
     "static/media/StardosStencil-Bold.woff2": "/kmkstroy-app/static/media/StardosStencil-Bold.c0712df3996564ec988e.woff2",
     "index.html": "/kmkstroy-app/index.html",
     "main.0f35b6e3.css.map": "/kmkstroy-app/static/css/main.0f35b6e3.css.map",
-    "main.23ea70b8.js.map": "/kmkstroy-app/static/js/main.23ea70b8.js.map"
+    "main.21bc370e.js.map": "/kmkstroy-app/static/js/main.21bc370e.js.map"
   },
   "entrypoints": [
     "static/css/main.0f35b6e3.css",
-    "static/js/main.23ea70b8.js"
+    "static/js/main.21bc370e.js"
   ]
 }

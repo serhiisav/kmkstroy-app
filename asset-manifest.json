@@ -1,9 +1,10 @@
 {
   "files": {
-    "main.css": "/kmkstroy-app/static/css/main.0f35b6e3.css",
-    "main.js": "/kmkstroy-app/static/js/main.6c7b0a93.js",
+    "main.css": "/kmkstroy-app/static/css/main.f5d9bbce.css",
+    "main.js": "/kmkstroy-app/static/js/main.866ba008.js",
     "static/media/background-services-3-min.jpg": "/kmkstroy-app/static/media/background-services-3-min.e69e575d291aa8ff1556.jpg",
     "static/media/background-about-1-min.jpg": "/kmkstroy-app/static/media/background-about-1-min.966ab89dc2f2be49cda3.jpg",
+    "static/media/background-contact-form1.jpg": "/kmkstroy-app/static/media/background-contact-form1.6f390b77e399cdbe8ece.jpg",
     "static/media/StardosStencil-Bold.svg": "/kmkstroy-app/static/media/StardosStencil-Bold.80f9e878750ea0603816.svg",
     "static/media/Montserrat-BoldItalic.woff": "/kmkstroy-app/static/media/Montserrat-BoldItalic.b547006cbe2561bcfd08.woff",
     "static/media/Montserrat-ExtraBoldItalic.woff": "/kmkstroy-app/static/media/Montserrat-ExtraBoldItalic.506bc4a1b94871060f27.woff",
@@ -47,11 +48,11 @@
     "static/media/StardosStencil-Regular.woff2": "/kmkstroy-app/static/media/StardosStencil-Regular.e417914f05e05c92b05b.woff2",
     "static/media/StardosStencil-Bold.woff2": "/kmkstroy-app/static/media/StardosStencil-Bold.c0712df3996564ec988e.woff2",
     "index.html": "/kmkstroy-app/index.html",
-    "main.0f35b6e3.css.map": "/kmkstroy-app/static/css/main.0f35b6e3.css.map",
-    "main.6c7b0a93.js.map": "/kmkstroy-app/static/js/main.6c7b0a93.js.map"
+    "main.f5d9bbce.css.map": "/kmkstroy-app/static/css/main.f5d9bbce.css.map",
+    "main.866ba008.js.map": "/kmkstroy-app/static/js/main.866ba008.js.map"
   },
   "entrypoints": [
-    "static/css/main.0f35b6e3.css",
-    "static/js/main.6c7b0a93.js"
+    "static/css/main.f5d9bbce.css",
+    "static/js/main.866ba008.js"
   ]
 }

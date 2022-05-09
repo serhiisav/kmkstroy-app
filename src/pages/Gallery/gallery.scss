@@ -1,0 +1,132 @@
+@import "../../variables";
+
+.section-gallery {
+  background-color: rgba(92, 92, 92, 0.554);
+}
+
+.gallery-wrapper {
+  height: calc(100vh - 85px);
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.swiper {
+  width: 100%;
+  height: 300px;
+  margin-left: auto;
+  margin-right: auto;
+
+  background: transparent;
+}
+
+.swiper-slide {
+  background-size: cover;
+  background-position: center;
+  // padding: 10px;
+  // background-color: bisque;
+}
+
+.mySwiper2 {
+  height: 100%;
+  width: 100%;
+}
+
+.mySwiper {
+  height: 20%;
+  width: 70%;
+  box-sizing: border-box;
+  // padding: 10px 0;
+
+  z-index: 777;
+  position: absolute;
+  bottom: 22%;
+  // left: 50%;
+  // transform: translateX(-50%);
+  transition: 0.3s ease;
+
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  padding: 10px 0;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 1px 5px 1px rgba(255, 255, 255, 0.724);
+  & .swiper-wrapper {
+  }
+}
+
+.mySwiper .swiper-slide {
+  width: 20%;
+  height: 100%;
+  opacity: 0.6;
+  background-color: transparent;
+  padding: 10px 0;
+  overflow: hidden;
+}
+
+.mySwiper .swiper-thumbs {
+}
+
+.mySwiper .swiper-slide > div,
+.mySwiper2 .swiper-slide > div {
+  height: 100%;
+  width: 100%;
+}
+
+.mySwiper .swiper-slide-thumb-active {
+  opacity: 1;
+  & > div {
+    border: 1px solid rgba(255, 255, 255, 0.838);
+    border-radius: 6px;
+  }
+}
+
+.swiper-slide .gallery-thumbs {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 6px;
+}
+.swiper-slide.gallery-image {
+  display: block;
+  width: auto;
+  height: 100%;
+  // object-fit: cover;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  padding: 10px 15px;
+  background-color: #00000050;
+  font-weight: bold;
+}
+
+.swiper-button-prev:hover::after,
+.swiper-button-next:hover::after {
+  background-color: #000000a9;
+}

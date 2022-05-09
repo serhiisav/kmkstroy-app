@@ -1,6 +1,8 @@
 @import "../../variables";
 
 .section-services {
+  overflow-x: hidden;
+
   width: 100%;
   min-height: 100vh;
   background: linear-gradient(to bottom, #7d7d7d25, #d4d4d46c),
@@ -16,7 +18,12 @@
   margin: 40px 0;
 }
 
+.services-wrap-none {
+  visibility: hidden;
+}
+
 .services-wrap {
+  visibility: visible;
   max-width: 80%;
   min-width: 290px;
   padding: 40px 10px 20px;

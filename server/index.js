@@ -2,12 +2,24 @@ const nodemailer = require('nodemailer');
 const express = require("express");
 const bodyParser = require('body-parser');
 const cors = require("cors");
+require('dotenv').config({ path: '../.env' })
 
-const port = process.env.PORT || 8000;
+const port = process.env.PORT || 5000;
 const app = express();
-require('dotenv').config()
-
 const { google } = require('googleapis');
+app.use(cors({
+    origin: '*'
+}));
+
+// const https = require('https')
+// const fs = require('fs')
+// const httpsOptions = {
+//     key: fs.readFileSync('./security/cert.key'),
+//     cert: fs.readFileSync('./security/cert.pem')
+// }
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }))
 
 const oauth2Client = new google.auth.OAuth2(
     process.env.REACT_APP_CLIENT_ID,
@@ -17,21 +29,14 @@ const oauth2Client = new google.auth.OAuth2(
 
 oauth2Client.setCredentials({ refresh_token: process.env.REACT_APP_REFRESH_TOKEN });
 
-require('dotenv').config();
-
-app.use(cors());
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }))
-
 app.post('/', (req, res) => {
-
     const html_message = `
-    <h3>Ви отримали повідомлення від: <span style='font-weight: normal'>${req.body.name}</span></h3>
-    <h4>Компанія: <span style='font-weight: normal'>${req.body.company}</span></h4>
-    <h4>Телефон: <span style='font-weight: normal'>${req.body.phone}</span></h4>
-    <h4>Мій email: <span style='font-weight: normal'>${req.body.email}</span></h4>
-    <p>${req.body.message}</p>
-`;
+        <h3>Ви отримали повідомлення від: <span style='font-weight: normal'>${req.body.name}</span></h3>
+        <h4>Компанія: <span style='font-weight: normal'>${req.body.company}</span></h4>
+        <h4>Телефон: <span style='font-weight: normal'>${req.body.phone}</span></h4>
+        <h4>Мій email: <span style='font-weight: normal'>${req.body.email}</span></h4>
+        <p>${req.body.message}</p>
+    `;
 
     const accessToken = oauth2Client.getAccessToken();
     const transport = nodemailer.createTransport({
@@ -61,8 +66,13 @@ app.post('/', (req, res) => {
             res.status(200).send('ok');
         }
     })
+    res.end()
 
 })
+
+// const server = https.createServer(httpsOptions, app).listen(port, () => {
+//     console.log('server running at ' + port)
+// })
 
 app.listen(port, () => {
     console.log(`Server running successfully on ${port}`);

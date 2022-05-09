@@ -1,8 +1,23 @@
 @import "_variables";
+// @import "_normilize.scss";
 @import "./fonts";
+@import "../node_modules/animate.css/animate.css";
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
 
 body {
-  box-sizing: border-box;
+  // position: relative;
+  height: 100%;
+  // width: 100%;
+  // max-width: 100%;
+  // overflow-x: hidden;
+  // height: 100%;
+
+  // box-sizing: border-box;
   margin: 0;
   // padding-top: 85px;
   font-family: "Montserrat", sans-serif;

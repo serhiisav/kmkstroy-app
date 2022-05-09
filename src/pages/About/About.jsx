@@ -1,13 +1,16 @@
-import React from "react";
 import './about.scss';
+import React, { useRef } from "react";
+import { useInViewport } from 'react-in-viewport';
 
 function About() {
+    const aboutRef = useRef();
+    const { inViewport } = useInViewport(aboutRef);
 
     return (
         <>
-            <section className="section-about" id="about">
+            <section ref={aboutRef} className="section-about" id="about">
                 <div className="container">
-                    <div className="about-wrap">
+                    <div className={inViewport ? 'about-wrap animate__animated animate__bounceInLeft animate__delay-0.5s' : 'about-wrap-none'}>
                         <h1 className="about-title">Про нас</h1>
                         <h3 className="about-subtitle">LLC KMKSTROY <br />на будівельному ринку України з 2015 року</h3>
                         <p className="about-description">Підприємство має ліцензію з класом відповідальності  СС2, СС3, та дозвіл для виконання  робіт підвищеної небезпеки.</p>

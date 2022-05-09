@@ -1,11 +1,16 @@
 @import "../../variables";
 
 .section-intro {
-  padding-top: 40px;
+  padding-top: 80px;
   width: 100%;
 }
 
+.section-intro-wrap-none {
+  visibility: hidden;
+}
+
 .section-intro-wrap {
+  visibility: visible;
   display: grid;
   grid-template-columns: minmax(min-content, max-content);
   grid-template-rows: min-content;

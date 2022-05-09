@@ -1,0 +1,65 @@
+[
+  {
+    "id": 1,
+    "img": "/img/gallery-1-min.jpg",
+    "thumbs": "/img/gallery-thumbs-1-min.jpg",
+    "title": "Bed",
+    "author": "swabdesign"
+  },
+  {
+    "id": 2,
+    "img": "/img/gallery-2-min.jpg",
+    "thumbs": "/img/gallery-thumbs-2-min.jpg",
+    "title": "Books",
+    "author": "Pavel Nekoranec"
+  },
+  {
+    "id": 3,
+    "img": "/img/gallery-3-min.jpg",
+    "thumbs": "/img/gallery-thumbs-3-min.jpg",
+    "title": "Sink",
+    "author": "Charles Deluvio"
+  },
+  {
+    "id": 4,
+    "img": "/img/gallery-4-min.jpg",
+    "thumbs": "/img/gallery-thumbs-4-min.jpg",
+    "title": "Kitchen",
+    "author": "Christian Mackie"
+  },
+  {
+    "id": 5,
+    "img": "/img/gallery-5-min.jpg",
+    "thumbs": "/img/gallery-thumbs-5-min.jpg",
+    "title": "Blinds",
+    "author": "Darren Richardson"
+  },
+  {
+    "id": 6,
+    "img": "/img/gallery-6-min.jpg",
+    "thumbs": "/img/gallery-thumbs-6-min.jpg",
+    "title": "Chairs",
+    "author": "Taylor Simpson"
+  },
+  {
+    "id": 7,
+    "img": "/img/gallery-7-min.jpg",
+    "thumbs": "/img/gallery-thumbs-7-min.jpg",
+    "title": "Laptop",
+    "author": "Ben Kolde"
+  },
+  {
+    "id": 8,
+    "img": "/img/gallery-8-min.jpg",
+    "thumbs": "/img/gallery-thumbs-8-min.jpg",
+    "title": "Doors",
+    "author": "Philipp Berndt"
+  },
+  {
+    "id": 9,
+    "img": "/img/gallery-9-min.jpg",
+    "thumbs": "/img/gallery-thumbs-9-min.jpg",
+    "title": "Coffee",
+    "author": "Jen P."
+  }
+]

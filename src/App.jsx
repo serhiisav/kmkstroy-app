@@ -6,9 +6,17 @@ import About from './pages/About/About';
 import Contacts from './pages/Contacts/Contacts';
 import Intro from './components/Intro/Intro';
 import Gallery from './pages/Gallery/Gallery';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { addAllImages } from './store/thunk';
 
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(addAllImages());
+  }, [dispatch]);
 
   return (
     <>

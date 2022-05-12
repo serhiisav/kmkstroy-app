@@ -75,13 +75,13 @@ function Header() {
                                 </li>
                                 <li className="header-nav-item"
                                 >
-                                    <Link smooth to='#projects'
+                                    <Link smooth to='#gallery'
                                         className="header-nav-link"
                                         onClick={e => toggleHamburger(e)}
                                         scroll={(el) => window.scrollTo({ behavior: 'smooth', top: el.offsetTop - 90 })}
                                     >
                                         <img className="header-nav-item-icon" src={process.env.PUBLIC_URL + '/img/icon-projects.svg'} alt="icon-projects" />
-                                        Проекти
+                                        Галерея
                                     </Link>
                                 </li>
                                 <li className="header-nav-item"

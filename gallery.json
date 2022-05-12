@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "img": "/img/gallery-1-min.jpg",
+    "thumbs": "/img/gallery-thumbs-1-min.jpg",
+    "title": "ТОВ «АГРО-ОВЕН»",
+    "description": "Влаштування бетонних підлог"
+  },
+  {
+    "id": 2,
+    "img": "/img/gallery-2-min.jpg",
+    "thumbs": "/img/gallery-thumbs-2-min.jpg",
+    "title": "ТОВ «АГРО-ОВЕН»",
+    "description": "Влаштування бетонних підлог"
+  },
+  {
+    "id": 3,
+    "img": "/img/gallery-3-min.jpg",
+    "thumbs": "/img/gallery-thumbs-3-min.jpg",
+    "title": "ПрАО «Интеркорн Корн Проссесинг Индастри»",
+    "description": "Влаштування полімерних підлог (BASF, Sherwin Williams)"
+  },
+  {
+    "id": 4,
+    "img": "/img/gallery-4-min.jpg",
+    "thumbs": "/img/gallery-thumbs-4-min.jpg",
+    "title": "ТОВ «ІНТЕРПАЙП УКРАЇНА»",
+    "description": "Влаштування бетонних підлог"
+  },
+  {
+    "id": 5,
+    "img": "/img/gallery-5-min.jpg",
+    "thumbs": "/img/gallery-thumbs-5-min.jpg",
+    "title": "ТОВ «ІНТЕРПАЙП УКРАЇНА»",
+    "description": "Влаштування бетонних підлог"
+  },
+  {
+    "id": 6,
+    "img": "/img/gallery-6-min.jpg",
+    "thumbs": "/img/gallery-thumbs-6-min.jpg",
+    "title": "ТОВ «ІНТЕРПАЙП УКРАЇНА»",
+    "description": "Влаштування бетонних підлог"
+  }
+]

@@ -7,7 +7,7 @@ function Contacts() {
 
     return (
         <>
-            <footer className="section-contacts" id="contacts">
+            <footer className="section-contacts">
                 <div className="container">
                     <div className="section-contacts-wrap" >
                         <div className="contacts-logo-wrap">

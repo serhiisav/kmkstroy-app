@@ -1,15 +1,14 @@
 import './galleryFullscreen.scss'
 import React, { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import { FreeMode, Navigation, Thumbs, EffectFade } from "swiper";
-
+import { FreeMode, Navigation, Thumbs } from "swiper";
 import "swiper/css";
-import 'swiper/css/bundle'
+// import 'swiper/css/bundle'
 import "swiper/css/free-mode";
 import "swiper/css/navigation";
 import "swiper/css/thumbs";
-import { useSelector } from 'react-redux';
 
 
 export default function GalleryFullscreen() {
@@ -19,23 +18,20 @@ export default function GalleryFullscreen() {
 
     const [thumbsSwiper, setThumbsSwiper] = useState(null);
     const [swiper, setSwiper] = useState(null);
+    const [indexSlide, setIndexSlide] = useState(0)
 
-
-    const getIndexSlide = (id) => {
-        if (!isNaN(id) && typeof id === "number" && Number.isInteger(id) && Number.isFinite(id) && id >= 0) {
-            const indexSlide = parseInt(Math.abs(id - galleryItems.length - 1), 10);
-            return indexSlide;
-        } else {
-            console.log('incorrect id item');
-        }
-    }
 
     useEffect(() => {
         if (swiper) {
-            swiper.slideTo(getIndexSlide(idImage), 700, true);
+            if (!isNaN(idImage) && typeof idImage === "number" && Number.isInteger(idImage) && Number.isFinite(idImage) && idImage >= 0) {
+                setIndexSlide(parseInt(Math.abs(idImage - galleryItems.length - 1), 10));
+            } else {
+                console.log('incorrect id item');
+            }
+            swiper.slideTo(indexSlide, 700, true);
         }
         return;
-    }, [swiper, idImage]);
+    }, [swiper, idImage, indexSlide, galleryItems]);
 
 
     return (
@@ -51,11 +47,11 @@ export default function GalleryFullscreen() {
                         loop={true}
                         onSwiper={setSwiper}
                         speed={400}
-                        spaceBetween={10}
+                        // spaceBetween={10}
                         navigation
-                        effect="fade"
+                        // effect="fade"
                         thumbs={{ swiper: thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null }}
-                        modules={[Navigation, Thumbs, EffectFade]}
+                        modules={[Navigation, Thumbs]}
                         className="mySwiper"
                     >
                         {galleryItems.map((item) => (
@@ -74,7 +70,6 @@ export default function GalleryFullscreen() {
                             </SwiperSlide>
                         ))}
                     </Swiper>
-
                     <div className='fullscreen-gallery-thumbs-up'>
                         <Swiper
                             onSwiper={setThumbsSwiper}

@@ -1,9 +1,18 @@
-* {
-  box-sizing: border-box;
-}
+@import "../../variables";
 
 .section-form {
-  padding: 40px 0;
+  // padding: 40px 0;
+  // padding-bottom: 30px;
+  // margin: 50px auto;
+  // background-color: #f8f8f8;
+  background: linear-gradient(to bottom, #2d394a, #0a1620d6, #272727);
+}
+
+.section-form-title {
+  text-align: center;
+  color: #ffffff;
+  padding: 30px 0 30px;
+  margin: 0;
 }
 
 .form-wrapper-none {
@@ -13,9 +22,10 @@
 .form-wrapper {
   visibility: visible;
   margin: 0 auto;
-  box-shadow: 0 0 20px 0 rgba(72, 94, 116, 0.7);
+  background-color: #ffffff;
+  // box-shadow: 0 0 8px 1px #ffffffb3;
   max-width: 1000px;
-  border-radius: 4px;
+  // border-radius: 4px;
   & > * {
     padding: 1em;
   }
@@ -26,10 +36,10 @@
 }
 
 .form-company-info {
-  border-top-left-radius: 4px;
-  border-top-right-radius: 4px;
+  // border-top-left-radius: 4px;
+  // border-top-right-radius: 4px;
 
-  background: linear-gradient(to bottom, #485e74a7, #dcdcdcad),
+  background: linear-gradient(to bottom, #2e4a5f51, #0010257b),
     url(../../../public/img/background-contact-form1.jpg);
   background-size: cover;
   background-repeat: no-repeat;
@@ -39,14 +49,14 @@
   line-height: 1.6;
 
   @media (min-width: 735px) {
-    background: linear-gradient(to right, #485e74a7, #dcdcdcad),
+    background: linear-gradient(to bottom, #0028484e, #00000066),
       url(../../../public/img/background-contact-form1.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
 
-    border-top-right-radius: 0;
-    border-bottom-left-radius: 4px;
+    // border-top-right-radius: 0;
+    // border-bottom-left-radius: 4px;
   }
   & h3 {
     margin: 0 0 1rem 0;
@@ -114,7 +124,7 @@
     }
   }
   & .form-submit {
-    background: #485e74;
+    background: #37465a;
     border: none;
     font-weight: bold;
     color: #f8f8f8;

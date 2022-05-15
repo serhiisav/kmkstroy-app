@@ -14,7 +14,7 @@ function Intro() {
         backgroundPosition: 'bottom center',
         // backgroundSize: '100% auto',
         backgroundSize: 'cover',
-        height: '100vh',
+        minHeight: '100vh',
         backgroundAttachment: 'fixed'
     }
     return (

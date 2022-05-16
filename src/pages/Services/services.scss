@@ -8,15 +8,11 @@
   background: linear-gradient(to bottom, #7d7d7d25, #d4d4d46c),
     url(../../../public/img/background-services-3-min.jpg);
 
-  // background-color: rgba(17, 133, 235, 0.744);
-  // mix-blend-mode: multiply;
-  // backdrop-filter: blur(5px);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: bottom;
   background-attachment: fixed;
   margin: 40px auto 0;
-  // padding: 40px;
 }
 
 .services-wrap-none {
@@ -32,7 +28,6 @@
 
   @media (min-width: 735px) {
     max-width: 70%;
-    // padding: 50px 50px;
   }
   @media (min-width: 945px) {
     max-width: 60%;

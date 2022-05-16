@@ -1,4 +1,4 @@
-import { object, string, number } from 'yup';
+import { object, string } from 'yup';
 
 
 let CartFormSchema = object().shape({

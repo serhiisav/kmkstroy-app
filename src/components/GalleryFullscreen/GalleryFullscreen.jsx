@@ -5,7 +5,6 @@ import { useSelector } from 'react-redux';
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Navigation, Thumbs } from "swiper";
 import "swiper/css";
-// import 'swiper/css/bundle'
 import "swiper/css/free-mode";
 import "swiper/css/navigation";
 import "swiper/css/thumbs";

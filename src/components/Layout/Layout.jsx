@@ -7,6 +7,7 @@ import Intro from "../Intro/Intro";
 import ScrollToTop from "../ScrollToTop/ScrollToTop";
 import SubmitForm from "../SubmitForm/SubmitForm";
 import Gallery from "../../pages/Gallery/Gallery";
+import Partners from "../../pages/Partners/Partners";
 
 
 const Layout = () => {
@@ -19,9 +20,9 @@ const Layout = () => {
                 <About />
                 <Services />
                 <Gallery />
+                <Partners />
                 <SubmitForm />
                 <Contacts />
-
                 <Outlet />
             </main>
         </>

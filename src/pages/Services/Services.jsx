@@ -19,11 +19,8 @@ function Services() {
                             <li className='services-item'>Виконання будівельно-монтажних, фасадних, покрівельних та оздоблювальних робіт</li>
                             <li className='services-item'>Влаштування інженерних  мереж</li>
                         </ul>
-
-
                     </div>
                 </div>
-
             </section>
         </>
     )

@@ -1,7 +1,6 @@
-import React, { forwardRef, useRef } from "react";
+import React from "react";
 import './contacts.scss';
-import { NavLink, Outlet } from 'react-router-dom';
-import { useSelector } from "react-redux";
+
 
 function Contacts() {
 
@@ -11,21 +10,16 @@ function Contacts() {
                 <div className="container">
                     <div className="section-contacts-wrap" >
                         <div className="contacts-logo-wrap">
-                            {/* <h2 className="contacts-title">ТОВ &laquo;КМКСТРОЙ&raquo;</h2> */}
                             <img
                                 className="contacts-logo"
                                 src={process.env.PUBLIC_URL + '/kmk-logo.png'}
                                 alt="logo"
                                 height='115' />
                             <div className="contacts-logo-title-wrap">
-
                                 <h1 className="contacts-logo-title">ТОВ &laquo;КМКСТРОЙ&raquo;</h1>
                                 <p className="contacts-logo-subtitle">Будівельні роботи та промислові підлоги</p>
-                                {/* <p className="contacts-logo-subtitle">Промислові підлоги</p> */}
                             </div>
-
                         </div>
-
                         <div className="contacts-address">
                             <h2 className="contacts-address-title">Офіс</h2>
                             <div className="contacts-address-content-wrap">
@@ -45,7 +39,6 @@ function Contacts() {
                                 <a className="contacts-link" href="mailto:kmkstroy82@gmail.com"
                                 >kmkstroy82@gmail.com</a>
                             </div>
-
                         </div>
                         <img
                             className="footer-img"
@@ -54,10 +47,8 @@ function Contacts() {
                             height='175'
                             width='272' />
                     </div>
-                    {/* </div> */}
                 </div>
                 <p className="footer-copyright">Copyright &copy; 2015-{new Date().getFullYear()} KMKSTROY. All Rights Reserved</p>
-
             </footer>
         </>
     )

@@ -1,11 +1,12 @@
 import './App.scss';
 import { Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout/Layout';
-import Services from './pages/Services/Services';
 import About from './pages/About/About';
-import Contacts from './pages/Contacts/Contacts';
+import Services from './pages/Services/Services';
 import Intro from './components/Intro/Intro';
 import Gallery from './pages/Gallery/Gallery';
+import Partners from './pages/Partners/Partners';
+import Contacts from './pages/Contacts/Contacts';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { addAllImages } from './store/thunk';
@@ -26,6 +27,7 @@ function App() {
           <Route path='about' element={<About />} />
           <Route path='services' element={<Services />} />
           <Route path='gallery' element={<Gallery />} />
+          <Route path='partners' element={<Partners />} />
           <Route path='contacts' element={<Contacts />} />
         </Route>
       </Routes>

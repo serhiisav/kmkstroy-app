@@ -1,13 +1,12 @@
 @import "../../variables";
 
 .gallery-fullscreen {
-  // background-color: rgba(92, 92, 92, 0.554);
   position: relative;
   overflow: hidden;
 }
 
 .section-gallery {
-  // min-height: 100vh;
+  min-height: 100vh;
   margin: 0 auto;
   padding: 40px 0 60px;
 }
@@ -35,23 +34,11 @@
 
 .my-masonry-grid {
   width: 100%;
-
-  display: -webkit-box; /* Not needed if autoprefixing */
-  display: -ms-flexbox; /* Not needed if autoprefixing */
   display: flex;
-  // margin-left: -12px; /* gutter size offset */
-  // width: auto;
 }
 .my-masonry-grid_column:not(:nth-child(1)) {
-  padding-left: 12px; /* gutter size */
+  padding-left: 12px;
   background-clip: padding-box;
-}
-
-/* Style your items */
-.my-masonry-grid_column > div {
-  /* change div to reference your elements you put in <Masonry> */
-  // background: grey;
-  // margin-bottom: 12px;
 }
 
 .image-wrapper {
@@ -63,10 +50,10 @@
     width: 100%;
     height: 100%;
     cursor: pointer;
-    transition: filter 350ms ease;
+    transition: opacity 350ms ease;
   }
   & :hover {
-    filter: opacity(0.6);
+    opacity: 0.6;
   }
 
   & .gallery-text-content {
@@ -124,7 +111,7 @@
   padding: 10px 15px 10px 10px;
   font-weight: bold;
   font-size: 17px;
-  transition: filter 0.5s ease;
+  transition: opacity 0.5s ease;
 
   & svg {
     display: block;
@@ -132,7 +119,6 @@
     height: 28px;
   }
   &:hover {
-    filter: opacity(70%);
-    // background-color: #a6b2bd;
+    opacity: 0.7;
   }
 }

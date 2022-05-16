@@ -1,0 +1,48 @@
+@import "../../variables";
+
+.section-partners {
+  margin: 0 auto;
+  padding-bottom: 40px;
+  margin-bottom: 80px;
+  background: linear-gradient(to bottom, #ffffff2c, #a0a0a01a),
+    url("../../../public/img/partners-background.jpg");
+  background-size: auto;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.partners-wrapper {
+  box-shadow: 0 0 5px 1px #9bb2b9c2;
+  margin: 40px 0;
+}
+
+.section-partners-title {
+  text-align: center;
+  color: #efefef;
+  margin: 0 0 50px;
+  padding-top: 20px;
+}
+
+.partners-mySwiper {
+  height: 100%;
+  width: 100%;
+  background-color: #dfdfdf73;
+  backdrop-filter: blur(2px);
+  padding: 0 10px;
+
+  & .swiper-wrapper {
+    align-items: stretch;
+  }
+
+  & .swiper-slide {
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & img {
+      display: block;
+      width: 100%;
+    }
+  }
+}

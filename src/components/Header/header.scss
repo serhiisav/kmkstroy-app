@@ -32,14 +32,14 @@
   @media (min-width: 475px) {
     grid-template-columns: 1fr max-content;
   }
-  @media (min-width: 835px) {
+  @media (min-width: 960px) {
     justify-content: start;
   }
 }
 
 .blur.active {
   display: block;
-  @media (min-width: 835px) {
+  @media (min-width: 960px) {
     display: none;
   }
 }
@@ -50,13 +50,13 @@
   height: 100vh;
   top: 85px;
   position: absolute;
-  backdrop-filter: blur(4px);
-  background: #272727a0;
+  backdrop-filter: blur(5px);
+  background: #262626df;
 }
 
 .header-nav-hamburger {
   align-self: center;
-  @media (min-width: 835px) {
+  @media (min-width: 960px) {
     display: none;
   }
 }
@@ -91,9 +91,8 @@
     transform: translateX(110%);
     transition: transform 0.5s;
   }
-  @media (min-width: 835px) {
+  @media (min-width: 960px) {
     max-width: 100%;
-
     transform: translateX(0);
     font-size: 18px;
     flex-wrap: nowrap;
@@ -113,8 +112,9 @@
   box-sizing: border-box;
   border-bottom: 1px solid #fffafa;
   display: flex;
+  justify-content: center;
 
-  @media (min-width: 835px) {
+  @media (min-width: 960px) {
     margin: 0;
     padding: 0;
     border-bottom: none;
@@ -126,10 +126,11 @@
 }
 
 .header-nav-link {
-  display: flex;
-  padding: 15px 25px;
-  column-gap: 20px;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: 30% 1fr;
+  padding: 13px 25px 13px 40px;
+  gap: 25px;
+  justify-items: left;
   width: 100%;
   text-decoration: none;
   color: #fffafa;
@@ -139,15 +140,26 @@
     color: #ff0000;
     background: transparent;
   }
-  @media (min-width: 835px) {
+  @media (min-width: 475px) {
+    grid-template-columns: 25% 1fr;
+  }
+
+  @media (min-width: 960px) {
+    display: flex;
+    gap: 0;
     font-size: 18px;
     padding: 10px;
   }
 }
 
+.header-nav-item-icon {
+  pointer-events: none;
+  justify-self: end;
+}
+
 .header-nav-item-icon,
 .item-home {
-  @media (min-width: 835px) {
+  @media (min-width: 960px) {
     display: none;
   }
 }
@@ -162,7 +174,7 @@
     justify-content: center;
     justify-self: start;
   }
-  @media (min-width: 835px) {
+  @media (min-width: 960px) {
     align-items: flex-end;
   }
 }

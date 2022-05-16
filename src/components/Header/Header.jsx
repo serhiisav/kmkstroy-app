@@ -93,8 +93,21 @@ function Header() {
                                             scrollWithOffset(e, 84)
                                         }}
                                     >
-                                        <img className="header-nav-item-icon" src={process.env.PUBLIC_URL + '/img/icon-projects.svg'} alt="icon-projects" />
+                                        <img className="header-nav-item-icon" src={process.env.PUBLIC_URL + '/img/icon-gallery.svg'} alt="icon-gallery" />
                                         Галерея
+                                    </Link>
+                                </li>
+                                <li className="header-nav-item"
+                                >
+                                    <Link to='#partners'
+                                        className="header-nav-link"
+                                        onClick={e => {
+                                            toggleHamburger(e)
+                                            scrollWithOffset(e, 84)
+                                        }}
+                                    >
+                                        <img className="header-nav-item-icon" src={process.env.PUBLIC_URL + '/img/icon-partners.svg'} alt="icon-partners" />
+                                        Партнери
                                     </Link>
                                 </li>
                                 <li className="header-nav-item"

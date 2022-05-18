@@ -136,10 +136,12 @@
   color: #fffafa;
   font-weight: normal;
   font-size: 22px;
+  cursor: pointer;
   &:hover {
     color: #ff0000;
     background: transparent;
   }
+
   @media (min-width: 475px) {
     grid-template-columns: 25% 1fr;
   }

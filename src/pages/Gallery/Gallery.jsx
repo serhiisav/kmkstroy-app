@@ -7,7 +7,6 @@ import { setIdImage } from '../../store/actions';
 import Masonry from 'react-masonry-css'
 
 
-
 export default function Gallery() {
     const galleryRef = useRef();
 

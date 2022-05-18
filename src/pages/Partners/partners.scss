@@ -28,13 +28,13 @@
   width: 100%;
   background-color: #dfdfdf73;
   backdrop-filter: blur(2px);
-  padding: 0 10px;
 
   & .swiper-wrapper {
     align-items: stretch;
   }
 
   & .swiper-slide {
+    padding: 0 10px;
     height: auto;
     display: flex;
     justify-content: center;

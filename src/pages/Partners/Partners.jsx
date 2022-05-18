@@ -48,6 +48,19 @@ export default function Partners() {
             width: '127',
             height: '50'
         },
+        {
+            name: 'karsal',
+            src: '/img/partner-karsal_transp.png',
+            width: '124',
+            height: '40'
+        },
+        {
+            name: 'vlast',
+            src: '/img/partner-vlast.png',
+            width: '51',
+            height: '60'
+        },
+
     ]
 
     return (
@@ -58,10 +71,13 @@ export default function Partners() {
                     <Swiper
                         loop={true}
                         speed={400}
-                        spaceBetween={4}
+                        // spaceBetween={5}
                         slidesPerView={2}
                         grabCursor
                         freeMode
+                        // slidesOffsetAfter={25}
+                        // slidesOffsetBefore={25}
+                        loopedSlides={partners.length}
                         autoplay={{
                             delay: 3000,
                             disableOnInteraction: false
@@ -69,15 +85,12 @@ export default function Partners() {
                         breakpoints={{
                             480: {
                                 slidesPerView: 3,
-                                spaceBetween: 30
                             },
                             735: {
                                 slidesPerView: 4,
-                                spaceBetween: 40,
                             },
                             1100: {
                                 slidesPerView: 5,
-                                spaceBetween: 40
                             }
                         }}
                         modules={[Navigation, Thumbs, Autoplay, FreeMode]}

@@ -1,6 +1,6 @@
 import './header.scss';
 import React, { useState } from "react";
-import { Link } from 'react-router-dom';
+import { Link, animateScroll as scroll } from "react-scroll";
 
 
 function Header() {
@@ -15,14 +15,6 @@ function Header() {
             setHamburgerOpen(false);
         }
     }
-
-    const scrollWithOffset = (e, yOffset = 84) => {
-        const target = e.target.getAttribute('href')
-        const sliceTarget = target.slice(target.lastIndexOf('#'))
-        const location = document.querySelector(sliceTarget).offsetTop
-        window.scrollTo({ left: 0, top: location - yOffset, behavior: 'smooth' });
-    }
-
     return (
         <>
             <div className="header">
@@ -32,9 +24,10 @@ function Header() {
                 }} />
                 <div className="container">
                     <div className="header-wrap">
-                        <Link to="#home"
+                        <Link
+                            to="home"
                             onClick={e => {
-                                window.scrollTo({ behavior: 'smooth', top: 0 });
+                                scroll.scrollToTop();
                                 toggleHamburger(e)
                             }}
                         >
@@ -49,11 +42,16 @@ function Header() {
                         <nav className="header-nav-list-wrap">
                             <ul className={!hamburgerOpen ? "header-nav-list" : "header-nav-list active"}>
                                 <li className="header-nav-item item-home">
-                                    <Link to="#home"
+                                    <Link
+                                        activeClass="active"
+                                        smooth={true}
+                                        offset={-84}
+                                        duration={500}
+                                        delay={200}
+                                        to="home"
                                         className="header-nav-link"
                                         onClick={e => {
-                                            toggleHamburger(e)
-                                            scrollWithOffset(e, 85)
+                                            toggleHamburger(e);
                                         }}
                                     >
                                         <img className="header-nav-item-icon" src={process.env.PUBLIC_URL + '/img/icon-home.svg'} alt="icon-home" />
@@ -61,11 +59,17 @@ function Header() {
                                     </Link>
                                 </li>
                                 <li className="header-nav-item">
-                                    <Link to="#about"
+                                    <Link
+                                        activeClass="active"
+                                        smooth={true}
+                                        offset={-115}
+                                        duration={500}
+                                        delay={200}
+                                        to="about"
                                         className="header-nav-link"
                                         onClick={e => {
                                             toggleHamburger(e)
-                                            scrollWithOffset(e, 115)
+
                                         }}
                                     >
                                         <img className="header-nav-item-icon" src={process.env.PUBLIC_URL + '/img/icon-about.svg'} alt="icon-about" />
@@ -73,11 +77,16 @@ function Header() {
                                     </Link>
                                 </li>
                                 <li className="header-nav-item">
-                                    <Link to='#services'
+                                    <Link
+                                        activeClass="active"
+                                        smooth={true}
+                                        offset={-84}
+                                        duration={500}
+                                        delay={200}
+                                        to='services'
                                         className="header-nav-link"
                                         onClick={e => {
-                                            toggleHamburger(e)
-                                            scrollWithOffset(e, 84)
+                                            toggleHamburger(e);
                                         }}
                                     >
                                         <img className="header-nav-item-icon" src={process.env.PUBLIC_URL + '/img/icon-services.svg'} alt="icon-services" />
@@ -86,11 +95,16 @@ function Header() {
                                 </li>
                                 <li className="header-nav-item"
                                 >
-                                    <Link to='#gallery'
+                                    <Link
+                                        activeClass="active"
+                                        smooth={true}
+                                        offset={-84}
+                                        duration={500}
+                                        delay={200}
+                                        to='gallery'
                                         className="header-nav-link"
                                         onClick={e => {
-                                            toggleHamburger(e)
-                                            scrollWithOffset(e, 84)
+                                            toggleHamburger(e);
                                         }}
                                     >
                                         <img className="header-nav-item-icon" src={process.env.PUBLIC_URL + '/img/icon-gallery.svg'} alt="icon-gallery" />
@@ -99,11 +113,16 @@ function Header() {
                                 </li>
                                 <li className="header-nav-item"
                                 >
-                                    <Link to='#partners'
+                                    <Link
+                                        activeClass="active"
+                                        smooth={true}
+                                        offset={-84}
+                                        duration={500}
+                                        delay={200}
+                                        to='partners'
                                         className="header-nav-link"
                                         onClick={e => {
-                                            toggleHamburger(e)
-                                            scrollWithOffset(e, 84)
+                                            toggleHamburger(e);
                                         }}
                                     >
                                         <img className="header-nav-item-icon" src={process.env.PUBLIC_URL + '/img/icon-partners.svg'} alt="icon-partners" />
@@ -112,11 +131,16 @@ function Header() {
                                 </li>
                                 <li className="header-nav-item"
                                 >
-                                    <Link to='#contacts'
+                                    <Link
+                                        activeClass="active"
+                                        smooth={true}
+                                        offset={-84}
+                                        duration={500}
+                                        delay={200}
+                                        to='contacts'
                                         className="header-nav-link"
                                         onClick={e => {
-                                            toggleHamburger(e)
-                                            scrollWithOffset(e, 84)
+                                            toggleHamburger(e);
                                         }}
                                     >
                                         <img className="header-nav-item-icon" src={process.env.PUBLIC_URL + '/img/icon-contacts.svg'} alt="icon-contacts" />

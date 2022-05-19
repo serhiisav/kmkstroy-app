@@ -1,18 +1,29 @@
 import './header.scss';
-import React, { useState } from "react";
+import React, { useEffect } from "react";
 import { Link, animateScroll as scroll } from "react-scroll";
+import { useDispatch, useSelector } from 'react-redux';
+import { setHamburgerOpen } from '../../store/actions';
 
 
 function Header() {
-    const [hamburgerOpen, setHamburgerOpen] = useState(false);
+    const dispatch = useDispatch();
+    const hamburgerOpen = useSelector(state => state.hamburgerOpen);
+
+    useEffect(() => {
+        if (hamburgerOpen) {
+            document.body.style.overflowY = 'hidden';
+        } else {
+            document.body.style.overflowY = 'auto';
+        }
+    }, [hamburgerOpen])
 
     const toggleHamburger = (e) => {
         if (e.target.className === 'header-nav-link' ||
             e.target.className === 'check' ||
             e.target.className === 'check-span') {
-            setHamburgerOpen(!hamburgerOpen);
+            dispatch(setHamburgerOpen(!hamburgerOpen));
         } else if (hamburgerOpen) {
-            setHamburgerOpen(false);
+            dispatch(setHamburgerOpen(false));
         }
     }
     return (
@@ -40,6 +51,7 @@ function Header() {
                                 height='75' />
                         </Link>
                         <nav className="header-nav-list-wrap">
+                            {/* <div> */}
                             <ul className={!hamburgerOpen ? "header-nav-list" : "header-nav-list active"}>
                                 <li className="header-nav-item item-home">
                                     <Link
@@ -148,6 +160,7 @@ function Header() {
                                     </Link>
                                 </li>
                             </ul>
+                            {/* </div> */}
                             <div className="header-contacts">
                                 <div className="header-contacts-link-wrap">
                                     <img src={process.env.PUBLIC_URL + '/img/icon-phone.svg'} alt="icon-phone" />

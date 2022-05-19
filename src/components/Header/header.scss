@@ -4,7 +4,7 @@
 .header {
   width: 100%;
   min-width: 300px;
-  position: sticky;
+  position: fixed;
   // position: -webkit-sticky;
   top: 0;
   z-index: 10;
@@ -12,6 +12,7 @@
 }
 
 .header-wrap {
+  position: relative;
   margin: 0 auto;
   display: grid;
   grid-template-columns: max-content 1fr;
@@ -24,17 +25,6 @@
 .header-logo {
   display: block;
   cursor: pointer;
-}
-
-.header-nav-list-wrap {
-  display: grid;
-  column-gap: 15px;
-  @media (min-width: 475px) {
-    grid-template-columns: 1fr max-content;
-  }
-  @media (min-width: 960px) {
-    justify-content: start;
-  }
 }
 
 .blur.active {
@@ -56,8 +46,22 @@
 
 .header-nav-hamburger {
   align-self: center;
+
   @media (min-width: 960px) {
     display: none;
+  }
+}
+
+.header-nav-list-wrap {
+  display: grid;
+  column-gap: 15px;
+
+  @media (min-width: 475px) {
+    grid-template-columns: 1fr max-content;
+  }
+  @media (min-width: 960px) {
+    justify-content: start;
+    height: 100%;
   }
 }
 
@@ -80,8 +84,19 @@
     visibility: visible;
     opacity: 1;
     transition: opacity 0.5s, transform 0.5s;
+
     @media (min-width: 475px) {
       transform: translateX(0);
+      max-height: calc(100vh - 85px);
+      overflow-y: scroll;
+      overflow-x: hidden;
+
+      &::-webkit-scrollbar {
+        width: 0;
+        background: transparent;
+      }
+      -ms-overflow-style: none;
+      scrollbar-width: none;
     }
   }
   @media (min-width: 475px) {
@@ -91,6 +106,7 @@
     transform: translateX(110%);
     transition: transform 0.5s;
   }
+
   @media (min-width: 960px) {
     max-width: 100%;
     transform: translateX(0);
@@ -110,9 +126,12 @@
   min-width: 300px;
   width: 100%;
   box-sizing: border-box;
-  border-bottom: 1px solid #fffafa;
+  border-bottom: 0.5px solid #fffafa4c;
   display: flex;
   justify-content: center;
+  &:nth-child(1) {
+    border-top: 0.5px solid #fffafa4c;
+  }
 
   @media (min-width: 960px) {
     margin: 0;

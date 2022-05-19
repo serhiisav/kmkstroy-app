@@ -2,7 +2,8 @@ import {
     ADD_ALL_IMAGES,
     ADD_IMAGES_FAILURE,
     ADD_IMAGES_STARTED,
-    SET_CURRENT_ID_IMAGE
+    SET_CURRENT_ID_IMAGE,
+    SET_HAMBURGER_OPEN
 } from './types'
 
 export const addAllImagesSuccess = (images) => {
@@ -28,5 +29,12 @@ export const setIdImage = (id) => {
     return {
         type: SET_CURRENT_ID_IMAGE,
         payload: { id }
+    }
+}
+
+export const setHamburgerOpen = (value) => {
+    return {
+        type: SET_HAMBURGER_OPEN,
+        payload: { value }
     }
 }

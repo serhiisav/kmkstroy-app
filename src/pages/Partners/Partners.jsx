@@ -21,8 +21,8 @@ export default function Partners() {
         {
             name: 'lotosbeton',
             src: '/img/partner-lotosbeton.png',
-            width: '150',
-            height: '70'
+            width: '118',
+            height: '55'
         },
         {
             name: 'remmers',
@@ -60,7 +60,24 @@ export default function Partners() {
             width: '51',
             height: '60'
         },
-
+        {
+            name: 'lindec',
+            src: '/img/partner-lindec.png',
+            width: '217',
+            height: '55'
+        },
+        {
+            name: 'klsfloor',
+            src: '/img/partner-klsfloor.png',
+            width: '202',
+            height: '50'
+        },
+        {
+            name: 'betolit',
+            src: '/img/partner-betolit.png',
+            width: '50',
+            height: '55'
+        },
     ]
 
     return (

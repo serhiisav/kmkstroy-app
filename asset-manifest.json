@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/kmkstroy-app/static/css/main.5aece14f.css",
-    "main.js": "/kmkstroy-app/static/js/main.62a67594.js",
+    "main.css": "/kmkstroy-app/static/css/main.56abce14.css",
+    "main.js": "/kmkstroy-app/static/js/main.6b402900.js",
     "static/media/background-header-1-min.jpg": "/kmkstroy-app/static/media/background-header-1-min.e9bcd977ad3565700a2b.jpg",
     "static/media/background-services-3-min.jpg": "/kmkstroy-app/static/media/background-services-3-min.e69e575d291aa8ff1556.jpg",
     "static/media/background-about-1-min.jpg": "/kmkstroy-app/static/media/background-about-1-min.966ab89dc2f2be49cda3.jpg",
@@ -47,11 +47,11 @@
     "static/media/gallery-chevron-up.svg": "/kmkstroy-app/static/media/gallery-chevron-up.e11b050a16c9a70bae3b.svg",
     "static/media/gallery-chevron-left.svg": "/kmkstroy-app/static/media/gallery-chevron-left.adf7d955b5547554b5ed.svg",
     "static/media/gallery-chevron-right.svg": "/kmkstroy-app/static/media/gallery-chevron-right.375a2839da22ffa17015.svg",
-    "main.5aece14f.css.map": "/kmkstroy-app/static/css/main.5aece14f.css.map",
-    "main.62a67594.js.map": "/kmkstroy-app/static/js/main.62a67594.js.map"
+    "main.56abce14.css.map": "/kmkstroy-app/static/css/main.56abce14.css.map",
+    "main.6b402900.js.map": "/kmkstroy-app/static/js/main.6b402900.js.map"
   },
   "entrypoints": [
-    "static/css/main.5aece14f.css",
-    "static/js/main.62a67594.js"
+    "static/css/main.56abce14.css",
+    "static/js/main.6b402900.js"
   ]
 }

@@ -2,7 +2,6 @@
 
 .section-services {
   overflow-x: hidden;
-
   width: 100%;
   min-height: 100vh;
   background: linear-gradient(to bottom, #7d7d7d25, #d4d4d46c),
@@ -11,8 +10,11 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: bottom;
-  background-attachment: fixed;
   margin: 40px auto 0;
+  background-attachment: fixed;
+  @supports (-webkit-overflow-scrolling: touch) {
+    background-attachment: scroll;
+  }
 }
 
 .services-wrap-none {

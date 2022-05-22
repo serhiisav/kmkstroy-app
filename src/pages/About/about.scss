@@ -11,6 +11,9 @@
   background-repeat: no-repeat;
   background-position: center;
   margin: 40px 0;
+  @supports (-webkit-overflow-scrolling: touch) {
+    background-attachment: scroll;
+  }
 }
 
 .about-wrap-none {

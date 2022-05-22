@@ -1,6 +1,6 @@
 @import "../../variables";
 
-.button-fullscreen-close {
+.button-swiper-close {
   position: absolute;
   right: 30px;
   top: 30px;
@@ -9,13 +9,33 @@
 }
 
 .fullscreen-wrapper {
-  height: 100vh;
   position: relative;
+  overflow: hidden;
+}
+
+.gallery-fullscreen {
+  height: 100vh;
+  width: 100vw;
+  // position: relative;
+}
+
+.gallery-modal {
+  position: fixed;
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+
+  top: 0;
+  left: 0;
+  z-index: 99;
+  background: #272727;
 }
 
 .mySwiper {
   height: 100%;
   width: 100%;
+  background: #272727;
+
   & .swiper-slide {
     text-align: center;
     font-size: 18px;
@@ -68,37 +88,37 @@
   position: relative;
   z-index: 9;
   cursor: pointer;
-  margin-top: 5px;
+  margin-top: 2px;
 
-  &::before {
-    content: "";
-    position: absolute;
-    bottom: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    background-image: url("../../../public/img/gallery-chevron-up.svg");
-    width: 60px;
-    height: 60px;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-  }
+  // &::before {
+  //   content: "";
+  //   position: absolute;
+  //   bottom: 100%;
+  //   left: 50%;
+  //   transform: translateX(-50%);
+  //   background-image: url("../../../public/img/gallery-chevron-up.svg");
+  //   width: 60px;
+  //   height: 60px;
+  //   background-repeat: no-repeat;
+  //   background-size: cover;
+  //   background-position: center;
+  // }
 
-  &::after {
-    content: "";
-    position: absolute;
-    bottom: 60%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 260px;
-    height: 55px;
-    border-top-left-radius: 20%;
-    border-top-right-radius: 20%;
-    background-color: #ffffff90;
-  }
+  // &::after {
+  //   content: "";
+  //   position: absolute;
+  //   bottom: 60%;
+  //   left: 50%;
+  //   transform: translateX(-50%);
+  //   width: 260px;
+  //   height: 55px;
+  //   border-top-left-radius: 20%;
+  //   border-top-right-radius: 20%;
+  //   background-color: #ffffff90;
+  // }
 
   &:hover .mySwiper-thumbs {
-    transform: translateY(0);
+    transform: translateY(-110%);
     opacity: 1;
     visibility: visible;
   }
@@ -116,8 +136,9 @@
   box-sizing: border-box;
 
   position: absolute;
-  bottom: 120px;
-  transform: translateY(110%);
+  // bottom: 120px;
+  // top: 0;
+  // transform: translateY(-110%);
   opacity: 0;
   visibility: hidden;
 
@@ -172,7 +193,7 @@
 .mySwiper .swiper-slide {
   & .mySwiper-text-content {
     position: absolute;
-    width: 100%;
+    max-width: 725px;
     top: 10%;
     left: 0;
     padding: 20px;

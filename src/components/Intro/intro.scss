@@ -2,7 +2,16 @@
 
 .section-intro {
   padding-top: 165px;
+  min-height: 100vh;
   width: 100%;
+  background-image: url(../../../public/img/background-header-1-min.jpg);
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  background-size: cover;
+  background-attachment: fixed;
+  @supports (-webkit-overflow-scrolling: touch) {
+    background-attachment: scroll;
+  }
 }
 
 .section-intro-wrap-none {
@@ -10,6 +19,9 @@
 }
 
 .section-intro-wrap {
+  position: absolute;
+  top: 165px;
+  left: 0;
   visibility: visible;
   display: grid;
   grid-template-columns: minmax(min-content, max-content);
@@ -24,7 +36,7 @@
     grid-template-columns: max-content;
     justify-content: end;
     margin: 0;
-    padding: 30px 40px;
+    padding: 30px 60px 30px 40px;
     row-gap: 15px;
     min-width: max-content;
     max-width: 60%;

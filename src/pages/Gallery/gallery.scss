@@ -1,10 +1,5 @@
 @import "../../variables";
 
-.gallery-fullscreen {
-  position: relative;
-  overflow: hidden;
-}
-
 .section-gallery {
   min-height: 100vh;
   margin: 0 auto;
@@ -16,21 +11,6 @@
   color: #3f3f3f;
   margin: 0 0 30px;
 }
-
-// .gallery-wrapper {
-//   width: 100%;
-// display: grid;
-// grid-template-columns: repeat(3, 1fr);
-// grid-template-rows: masonry;
-// gap: 10px;
-// // columns: 1;
-// @media (min-width: 475px) {
-//   columns: 2;
-// }
-// @media (min-width: 835px) {
-//   columns: 3 auto;
-// }
-// }
 
 .my-masonry-grid {
   width: 100%;
@@ -99,7 +79,7 @@
 
 .gallery-button-load {
   color: #ffffff;
-  background-color: #76c1ae;
+  background-color: #3a4d67;
   border: none;
   text-transform: uppercase;
   display: flex;
@@ -121,4 +101,12 @@
   &:hover {
     opacity: 0.7;
   }
+}
+
+.fullscreen {
+  display: none;
+}
+
+.fullscreen-active {
+  display: block;
 }

@@ -1,34 +1,25 @@
 import './gallery.scss'
-import React, { useCallback, useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import GalleryFullscreen from "../../components/GalleryFullscreen/GalleryFullscreen";
-import fscreen from 'fscreen';
+import { FullScreen, useFullScreenHandle } from "react-full-screen";
 import { useDispatch, useSelector } from 'react-redux';
 import { setIdImage } from '../../store/actions';
-import Masonry from 'react-masonry-css'
+import Masonry from 'react-masonry-css';
+
+import { isFirefox, isOpera, isEdge, isChrome, isSamsungBrowser } from 'react-device-detect';
 
 
 export default function Gallery() {
     const galleryRef = useRef();
-
     const dispatch = useDispatch();
-
     const isLoading = useSelector(state => state.isLoading);
     const galleryItems = useSelector(state => state.galleryItems);
-    const [inFullscreenMode, setInFullscreenMode] = useState(false);
+    const [isSupportFullscreen, setIsSupportFullscreen] = useState(true);
+    const [inModalWindow, setInModalWindow] = useState(false);
+    const [numberImages, setNumberImages] = useState(8);
+    const [classGalleryWrapper, setClassGalleryWrapper] = useState('fullscreen');
 
-    const [numberImages, setNumberImages] = useState(9);
-
-    const handleFullscreenChange = useCallback(() => {
-        if (fscreen.fullscreenElement !== null) {
-            setInFullscreenMode(true);
-        } else {
-            setInFullscreenMode(false);
-        }
-    }, []);
-
-    const handleFullscreenError = useCallback((e) => {
-        console.log('Fullscreen Error', e);
-    }, []);
+    const handle = useFullScreenHandle();
 
     const breakpointColumnsObj = {
         default: 3,
@@ -37,29 +28,28 @@ export default function Gallery() {
     };
 
     useEffect(() => {
-        if (fscreen.fullscreenEnabled) {
-            fscreen.addEventListener(
-                'fullscreenchange',
-                handleFullscreenChange,
-                false,
-            );
-            fscreen.addEventListener('fullscreenerror', handleFullscreenError, false);
-            return () => {
-                fscreen.removeEventListener('fullscreenchange', handleFullscreenChange);
-                fscreen.removeEventListener('fullscreenerror', handleFullscreenError);
-            };
-        }
-    });
+        // if (isFirefox || isOpera || isEdge || isChrome || isSamsungBrowser) {
+        if (!isFirefox && !isOpera && !isEdge && !isChrome && !isSamsungBrowser) {
+            setClassGalleryWrapper('modal');
+            setIsSupportFullscreen(false);
+        } else return;
+    }, []);
 
-    const appElement = useRef(null);
-
-    const toggleFullscreen = useCallback(() => {
-        if (inFullscreenMode) {
-            fscreen.exitFullscreen();
+    const handleScreenOpen = () => {
+        if (isSupportFullscreen) {
+            handle.enter();
         } else {
-            fscreen.requestFullscreen(appElement.current);
+            setInModalWindow(true);
         }
-    }, [inFullscreenMode]);
+    }
+
+    const handleScreenClose = () => {
+        if (isSupportFullscreen) {
+            handle.exit();
+        } else {
+            setInModalWindow(false);
+        }
+    }
 
     return (
         <>
@@ -78,10 +68,9 @@ export default function Gallery() {
                                         className='image-wrapper animate__animated animate__zoomIn animate__delay-1s'
                                         key={item.id}>
                                         <img
-                                            onClick={() => {
-                                                dispatch(setIdImage(item.id))
-                                                    ;
-                                                toggleFullscreen();
+                                            onClick={(e) => {
+                                                dispatch(setIdImage(item.id));
+                                                handleScreenOpen();
                                             }}
                                             className='gallery-image'
                                             src={process.env.PUBLIC_URL + item.img}
@@ -98,24 +87,14 @@ export default function Gallery() {
                             }
                         </Masonry>
                     }
-                    <div ref={appElement}>
-                        {inFullscreenMode ?
-                            <div className='gallery-fullscreen active'>
-                                <div className='fullscreen-wrapper'>
-                                    <img
-                                        className='button-fullscreen-close'
-                                        onClick={toggleFullscreen}
-                                        src={process.env.PUBLIC_URL + '/img/gallery-minimize.svg'} alt='close'
-                                    />
-                                    <GalleryFullscreen />
-                                </div>
-                            </div> : null}
-                    </div>
                     {galleryItems.length > numberImages &&
-                        <button className='gallery-button-load' onClick={() => setNumberImages(numberImages + 9)}>
+                        <button className='gallery-button-load' onClick={() => setNumberImages(numberImages + 8)}>
                             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
                             Завантажити більше</button>}
                 </div>
+                <FullScreen className={handle.active || inModalWindow ? 'fullscreen-active' : null} handle={handle}>
+                    <GalleryFullscreen handleScreenClose={handleScreenClose} classGalleryWrapper={classGalleryWrapper} isOpen={handle.active || inModalWindow} isSupportFullscreen={isSupportFullscreen} />
+                </FullScreen>
             </section>
         </>
     )

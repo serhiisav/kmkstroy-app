@@ -1,19 +1,30 @@
 import './header.scss';
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { Link, animateScroll as scroll } from "react-scroll";
 import { useDispatch, useSelector } from 'react-redux';
 import { setHamburgerOpen } from '../../store/actions';
+import { disableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
 
 
 function Header() {
     const dispatch = useDispatch();
     const hamburgerOpen = useSelector(state => state.hamburgerOpen);
+    const hamburgerRef = useRef(null)
+
+    // useEffect(() => {
+    //     if (hamburgerOpen) {
+    //         document.body.style.overflowY = 'hidden';
+    //     } else {
+    //         document.body.style.overflowY = 'auto';
+    //     }
+    // }, [hamburgerOpen]);
 
     useEffect(() => {
         if (hamburgerOpen) {
-            document.body.style.overflowY = 'hidden';
-        } else {
-            document.body.style.overflowY = 'auto';
+            disableBodyScroll(hamburgerRef);
+        }
+        return () => {
+            clearAllBodyScrollLocks();
         }
     }, [hamburgerOpen])
 
@@ -50,8 +61,7 @@ function Header() {
                                 alt="logo"
                                 height='75' />
                         </Link>
-                        <nav className="header-nav-list-wrap">
-                            {/* <div> */}
+                        <nav ref={hamburgerRef} className="header-nav-list-wrap">
                             <ul className={!hamburgerOpen ? "header-nav-list" : "header-nav-list active"}>
                                 <li className="header-nav-item item-home">
                                     <Link
@@ -160,7 +170,6 @@ function Header() {
                                     </Link>
                                 </li>
                             </ul>
-                            {/* </div> */}
                             <div className="header-contacts">
                                 <div className="header-contacts-link-wrap">
                                     <img src={process.env.PUBLIC_URL + '/img/icon-phone.svg'} alt="icon-phone" />

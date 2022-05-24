@@ -29,7 +29,8 @@ function Header() {
     }, [hamburgerOpen])
 
     const toggleHamburger = (e) => {
-        if (e.target.className === 'header-nav-link' ||
+        if (
+            // e.target.className === 'header-nav-link' ||
             e.target.className === 'check' ||
             e.target.className === 'check-span') {
             dispatch(setHamburgerOpen(!hamburgerOpen));

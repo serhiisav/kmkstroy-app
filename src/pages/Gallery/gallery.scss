@@ -1,7 +1,6 @@
 @import "../../variables";
 
 .section-gallery {
-  min-height: 100vh;
   margin: 0 auto;
   padding: 40px 0 60px;
 }
@@ -12,18 +11,8 @@
   margin: 0 0 30px;
 }
 
-.my-masonry-grid {
-  width: 100%;
-  display: flex;
-}
-.my-masonry-grid_column:not(:nth-child(1)) {
-  padding-left: 12px;
-  background-clip: padding-box;
-}
-
 .image-wrapper {
   position: relative;
-  margin-bottom: 12px;
 
   & .gallery-image {
     display: block;
@@ -103,10 +92,10 @@
   }
 }
 
-.fullscreen {
+.fullscreen-closed {
   display: none;
 }
 
-.fullscreen-active {
-  display: block;
+.modal-closed {
+  transform: scale(0);
 }

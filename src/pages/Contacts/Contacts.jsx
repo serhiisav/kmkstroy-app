@@ -48,6 +48,22 @@ function Contacts() {
                             width='272' />
                     </div>
                 </div>
+                <div className="footer-links-wrap">
+                    <div>
+                        <a
+                            href="https://www.youtube.com/channel/UC6N0k9hxpoWZ_FxDAuBCU3g/featured"
+                            target="_blank"
+                            rel="noreferrer"
+                        >
+                            <img
+                                className="footer-youtube-img"
+                                src={process.env.PUBLIC_URL + '/img/footer-youtube-logo.svg'}
+                                alt="YouTube-Link"
+                                height='15'
+                            />
+                        </a>
+                    </div>
+                </div>
                 <p className="footer-copyright">Copyright &copy; 2015-{new Date().getFullYear()} KMKSTROY. All Rights Reserved</p>
             </footer>
         </>

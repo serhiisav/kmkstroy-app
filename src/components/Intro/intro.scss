@@ -1,7 +1,7 @@
 @import "../../variables";
 
 .section-intro {
-  padding-top: 165px;
+  // padding-top: 165px;
   min-height: 100vh;
   width: 100%;
   background-image: url(../../../public/img/background-header-1-min.jpg);
@@ -20,7 +20,8 @@
 
 .section-intro-wrap {
   position: absolute;
-  top: 165px;
+  // top: 165px;
+  top: 25%;
   left: 0;
   visibility: visible;
   display: grid;
@@ -35,11 +36,15 @@
   @media (min-width: 475px) {
     grid-template-columns: max-content;
     justify-content: end;
+    top: 40%;
+
     margin: 0;
     padding: 30px 60px 30px 40px;
     row-gap: 15px;
-    min-width: max-content;
-    max-width: 60%;
+    min-width: 60%;
+  }
+  @media (min-width: 945px) {
+    top: 30%;
   }
 }
 

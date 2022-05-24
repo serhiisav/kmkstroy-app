@@ -1,15 +1,13 @@
 @import "../../variables";
 
 .section-contacts {
-  background: #272727;
+  background: $bgHeader;
   padding-top: 40px;
 }
 
 .section-contacts-wrap {
-  display: flex;
-  flex-direction: column;
+  @include flexColumn;
   justify-content: center;
-  align-items: center;
   row-gap: 25px;
 
   @media (min-width: 595px) {
@@ -26,9 +24,7 @@
   }
 
   & .contacts-logo-wrap {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    @include flexColumn;
     text-align: center;
 
     & .contacts-logo {
@@ -76,9 +72,9 @@
 
       & .contacts-link {
         text-decoration: none;
-        color: #fffafa;
+        color: $colorTextWhite;
         &:hover {
-          color: #87cefa;
+          color: $colorLinkBlue;
           text-decoration: underline;
         }
       }
@@ -105,12 +101,12 @@
 .contacts-logo-title {
   margin: 0;
   font-weight: normal;
-  color: #fffafa;
+  color: $colorTextWhite;
 }
 
 .contacts-address-content,
 .contacts-logo-subtitle {
-  color: #fffafa;
+  color: $colorTextWhite;
   margin: 0;
 }
 
@@ -130,7 +126,7 @@
   }
   & div {
     padding: 5px 10px;
-    background-color: #272727;
+    background-color: $bgHeader;
     position: relative;
   }
   & .footer-youtube-img {
@@ -139,7 +135,7 @@
 }
 .footer-copyright {
   font-size: 14px;
-  color: #fffafa;
+  color: $colorTextWhite;
   margin: 0 auto;
   padding: 0 10px 30px;
   text-align: center;

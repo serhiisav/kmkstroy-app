@@ -8,7 +8,7 @@
   // position: -webkit-sticky;
   top: 0;
   z-index: 10;
-  background: #272727;
+  background: $bgHeader;
 }
 
 .header-wrap {
@@ -152,12 +152,13 @@
   justify-items: left;
   width: 100%;
   text-decoration: none;
-  color: #fffafa;
+  color: $colorTextWhite;
   font-weight: normal;
   font-size: 22px;
+  user-select: none;
   cursor: pointer;
   &:hover {
-    color: #ff0000;
+    color: $bgAccentColor;
     background: transparent;
   }
 
@@ -202,9 +203,9 @@
 
 .header-contacts-link {
   text-decoration: none;
-  color: #fffafa;
+  color: $colorTextWhite;
   &:hover {
-    color: #87cefa;
+    color: $colorLinkBlue;
     text-decoration: underline;
   }
 }

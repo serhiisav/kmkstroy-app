@@ -34,7 +34,7 @@
     align-items: center;
     color: #ffffff;
     text-align: center;
-    background: linear-gradient(to top, #272727, #ffffff00);
+    background: linear-gradient(to top, $bgHeader, #ffffff00);
     pointer-events: none;
   }
 
@@ -62,7 +62,7 @@
   &:hover .gallery-zoomIn > svg {
     width: 40px;
     height: 40px;
-    stroke: #272727;
+    stroke: $bgHeader;
   }
 }
 

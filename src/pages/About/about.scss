@@ -7,9 +7,7 @@
     url(../../../public/img/background-about-1-min.jpg);
 
   background-attachment: fixed;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+  @include bgcover(center);
   margin: 40px 0;
   @supports (-webkit-overflow-scrolling: touch) {
     background-attachment: scroll;

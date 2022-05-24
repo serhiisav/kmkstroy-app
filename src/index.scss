@@ -9,9 +9,14 @@
   box-sizing: border-box;
 }
 
-// html {
-//   scroll-behavior: smooth;
-// }
+html {
+  scroll-behavior: smooth;
+}
+@-moz-document url-prefix() {
+  html {
+    scrollbar-width: none;
+  }
+}
 
 body {
   // position: relative;
@@ -22,6 +27,7 @@ body {
   }
   -ms-overflow-style: none;
   scrollbar-width: none;
+
   // width: 100%;
   // max-width: 100%;
   // overflow-x: hidden;
@@ -60,14 +66,3 @@ body {
 //   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
 //     monospace;
 // }
-
-.home-btn {
-  display: inline-block;
-  min-width: 150px;
-  text-decoration: none;
-  background-color: $bgAccentColor;
-  color: $colorCountHeader;
-  padding: 5px 10px;
-  text-transform: uppercase;
-  border-radius: 5px;
-}

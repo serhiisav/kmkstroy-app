@@ -1,0 +1,65 @@
+@import "../../variables";
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 44px;
+  height: 18px;
+
+  & input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    &:checked + .slider::before {
+      transform: translateX(20px);
+      content: "en";
+    }
+    &:checked + .slider {
+      background-image: linear-gradient(to left, #272727 40%, #f5f5f596),
+        url(../../../public/img/flag-ua.svg);
+
+      background-repeat: no-repeat;
+      background-size: auto 100%;
+      background-position: left center;
+      transition: 0.4s;
+    }
+  }
+
+  & .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-image: linear-gradient(to right, #272727 40%, #f5f5f579),
+      url(../../../public/img/flag-gb.svg);
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    background-position: right center;
+    transition: 0.4s;
+
+    border-radius: 14px;
+    &::before {
+      position: absolute;
+      content: "ua";
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      vertical-align: baseline;
+      line-height: 20px;
+      font-size: 14px;
+      // color: $colorTextWhite;
+      color: white;
+
+      width: 28px;
+      height: 20px;
+      background: #636363c2;
+      top: -1px;
+      left: -2px;
+      border-radius: 14px;
+      transition: 0.4s;
+    }
+  }
+}

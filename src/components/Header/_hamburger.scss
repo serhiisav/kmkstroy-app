@@ -1,4 +1,4 @@
-label {
+.header-nav-hamburger {
   justify-self: end;
   order: 1;
   display: flex;
@@ -6,44 +6,44 @@ label {
   align-items: flex-end;
   width: 26px;
   cursor: pointer;
-}
 
-label span {
-  background: $colorTextWhite;
-  border-radius: 10px;
-  height: 3px;
-  margin: 5px 0;
-  transition: 0.4s cubic-bezier(0.68, -0.6, 0.32, 1.6);
-}
+  & .check-span {
+    background: $colorTextWhite;
+    border-radius: 10px;
+    height: 3px;
+    margin: 5px 0;
+    transition: 0.4s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+  }
 
-span:nth-of-type(1) {
-  width: 50%;
-}
+  & .check-span:nth-of-type(1) {
+    width: 50%;
+  }
 
-span:nth-of-type(2) {
-  width: 100%;
-}
+  & .check-span:nth-of-type(2) {
+    width: 100%;
+  }
 
-span:nth-of-type(3) {
-  width: 75%;
-}
+  & .check-span:nth-of-type(3) {
+    width: 75%;
+  }
 
-input[type="checkbox"] {
-  display: none;
-}
+  & .check[type="checkbox"] {
+    display: none;
+  }
 
-input[type="checkbox"]:checked ~ span:nth-of-type(1) {
-  transform-origin: bottom;
-  transform: rotatez(45deg) translate(-3px, 13px);
-}
+  & .check[type="checkbox"]:checked ~ .check-span:nth-of-type(1) {
+    transform-origin: bottom;
+    transform: rotatez(45deg) translate(-3px, 13px);
+  }
 
-input[type="checkbox"]:checked ~ span:nth-of-type(2) {
-  transform-origin: top;
-  transform: rotatez(-45deg);
-}
+  & .check[type="checkbox"]:checked ~ .check-span:nth-of-type(2) {
+    transform-origin: top;
+    transform: rotatez(-45deg);
+  }
 
-input[type="checkbox"]:checked ~ span:nth-of-type(3) {
-  transform-origin: bottom;
-  width: 60%;
-  transform: translate(-1px, -10px) rotatez(45deg);
+  & .check[type="checkbox"]:checked ~ .check-span:nth-of-type(3) {
+    transform-origin: bottom;
+    width: 60%;
+    transform: translate(-1px, -10px) rotatez(45deg);
+  }
 }

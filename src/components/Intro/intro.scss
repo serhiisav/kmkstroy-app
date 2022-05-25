@@ -64,8 +64,8 @@
   font-weight: bold;
   margin: 0;
   color: #ffffffcc;
+  justify-self: end;
   @media (min-width: 945px) {
-    justify-self: end;
     font-size: 30px;
   }
 }

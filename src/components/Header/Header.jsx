@@ -4,12 +4,16 @@ import { Link, animateScroll as scroll } from "react-scroll";
 import { useDispatch, useSelector } from 'react-redux';
 import { setHamburgerOpen } from '../../store/actions';
 import { disableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
+import { useTranslation } from "react-i18next";
+import ToggleLanguage from './ToggleLanguage';
+
 
 
 function Header() {
     const dispatch = useDispatch();
     const hamburgerOpen = useSelector(state => state.hamburgerOpen);
-    const hamburgerRef = useRef(null)
+    const hamburgerRef = useRef(null);
+    const { t } = useTranslation();
 
     // useEffect(() => {
     //     if (hamburgerOpen) {
@@ -40,7 +44,7 @@ function Header() {
     }
     return (
         <>
-            <div className="header">
+            <header className="header">
                 <div className={hamburgerOpen ? "blur active" : "blur"} onClick={e => {
                     e.stopPropagation();
                     toggleHamburger(e)
@@ -56,9 +60,9 @@ function Header() {
                         >
                             <img
                                 className="header-logo"
-                                src={process.env.PUBLIC_URL + '/kmk-logo.png'}
-                                onMouseOver={e => e.currentTarget.src = process.env.PUBLIC_URL + "/kmk-logo-hover.png"}
-                                onMouseOut={e => e.currentTarget.src = process.env.PUBLIC_URL + "/kmk-logo.png"}
+                                src={process.env.PUBLIC_URL + t('logo_header')}
+                                onMouseOver={e => e.currentTarget.src = process.env.PUBLIC_URL + t('logo-hover_header')}
+                                onMouseOut={e => e.currentTarget.src = process.env.PUBLIC_URL + t('logo_header')}
                                 alt="logo"
                                 height='75' />
                         </Link>
@@ -70,7 +74,7 @@ function Header() {
                                         smooth={true}
                                         offset={-84}
                                         duration={500}
-                                        delay={200}
+                                        // delay={10}
                                         to="home"
                                         className="header-nav-link"
                                         onClick={e => {
@@ -78,7 +82,7 @@ function Header() {
                                         }}
                                     >
                                         <img className="header-nav-item-icon" src={process.env.PUBLIC_URL + '/img/icon-home.svg'} alt="icon-home" />
-                                        Головна
+                                        {t('nav_home')}
                                     </Link>
                                 </li>
                                 <li className="header-nav-item">
@@ -87,7 +91,7 @@ function Header() {
                                         smooth={true}
                                         offset={-115}
                                         duration={500}
-                                        delay={200}
+                                        // delay={10}
                                         to="about"
                                         className="header-nav-link"
                                         onClick={e => {
@@ -96,16 +100,16 @@ function Header() {
                                         }}
                                     >
                                         <img className="header-nav-item-icon" src={process.env.PUBLIC_URL + '/img/icon-about.svg'} alt="icon-about" />
-                                        Про нас
+                                        {t('nav_about')}
                                     </Link>
                                 </li>
                                 <li className="header-nav-item">
                                     <Link
                                         activeClass="active"
                                         smooth={true}
-                                        offset={-84}
+                                        offset={-83}
                                         duration={500}
-                                        delay={200}
+                                        // delay={10}
                                         to='services'
                                         className="header-nav-link"
                                         onClick={e => {
@@ -113,7 +117,7 @@ function Header() {
                                         }}
                                     >
                                         <img className="header-nav-item-icon" src={process.env.PUBLIC_URL + '/img/icon-services.svg'} alt="icon-services" />
-                                        Послуги
+                                        {t('nav_services')}
                                     </Link>
                                 </li>
                                 <li className="header-nav-item"
@@ -121,9 +125,9 @@ function Header() {
                                     <Link
                                         activeClass="active"
                                         smooth={true}
-                                        offset={-84}
+                                        offset={-82}
                                         duration={500}
-                                        delay={200}
+                                        // delay={10}
                                         to='gallery'
                                         className="header-nav-link"
                                         onClick={e => {
@@ -131,7 +135,7 @@ function Header() {
                                         }}
                                     >
                                         <img className="header-nav-item-icon" src={process.env.PUBLIC_URL + '/img/icon-gallery.svg'} alt="icon-gallery" />
-                                        Галерея
+                                        {t('nav_gallery')}
                                     </Link>
                                 </li>
                                 <li className="header-nav-item"
@@ -139,9 +143,9 @@ function Header() {
                                     <Link
                                         activeClass="active"
                                         smooth={true}
-                                        offset={-84}
+                                        offset={-82}
                                         duration={500}
-                                        delay={200}
+                                        // delay={10}
                                         to='partners'
                                         className="header-nav-link"
                                         onClick={e => {
@@ -149,7 +153,7 @@ function Header() {
                                         }}
                                     >
                                         <img className="header-nav-item-icon" src={process.env.PUBLIC_URL + '/img/icon-partners.svg'} alt="icon-partners" />
-                                        Партнери
+                                        {t('nav_partners')}
                                     </Link>
                                 </li>
                                 <li className="header-nav-item"
@@ -159,7 +163,7 @@ function Header() {
                                         smooth={true}
                                         offset={-84}
                                         duration={500}
-                                        delay={200}
+                                        // delay={10}
                                         to='contacts'
                                         className="header-nav-link"
                                         onClick={e => {
@@ -167,10 +171,13 @@ function Header() {
                                         }}
                                     >
                                         <img className="header-nav-item-icon" src={process.env.PUBLIC_URL + '/img/icon-contacts.svg'} alt="icon-contacts" />
-                                        Контакти
+                                        {t('nav_contacts')}
                                     </Link>
                                 </li>
                             </ul>
+                            <div className='header-toggle-language-wrap'>
+                                <ToggleLanguage />
+                            </div>
                             <div className="header-contacts">
                                 <div className="header-contacts-link-wrap">
                                     <img src={process.env.PUBLIC_URL + '/img/icon-phone.svg'} alt="icon-phone" />
@@ -197,7 +204,7 @@ function Header() {
                         </nav>
                     </div>
                 </div>
-            </div>
+            </header>
         </>
     )
 }

@@ -2,6 +2,7 @@
   {
     "id": 1,
     "img": "/img/gallery/gallery-1-min.jpg",
+    "img540": "/img/gallery/w540/gallery-1-min-w540.jpg",
     "thumbs": "/img/gallery/gallery-thumbs-1-min.jpg",
     "title": "ТОВ «АГРО-ОВЕН»",
     "description": "Влаштування рулонної покрівлі"
@@ -9,6 +10,7 @@
   {
     "id": 2,
     "img": "/img/gallery/gallery-2-min.jpg",
+    "img540": "/img/gallery/w540/gallery-2-min-w540.jpg",
     "thumbs": "/img/gallery/gallery-thumbs-2-min.jpg",
     "title": "ТОВ «АГРО-ОВЕН»",
     "description": "Влаштування рулонної покрівлі"
@@ -16,6 +18,7 @@
   {
     "id": 3,
     "img": "/img/gallery/gallery-3-min.jpg",
+    "img540": "/img/gallery/w540/gallery-3-min-w540.jpg",
     "thumbs": "/img/gallery/gallery-thumbs-3-min.jpg",
     "title": "ТОВ «АГРО-ОВЕН»",
     "description": "Влаштування бетонних підлог"
@@ -23,6 +26,7 @@
   {
     "id": 4,
     "img": "/img/gallery/gallery-4-min.jpg",
+    "img540": "/img/gallery/w540/gallery-4-min-w540.jpg",
     "thumbs": "/img/gallery/gallery-thumbs-4-min.jpg",
     "title": "ТОВ «АГРО-ОВЕН»",
     "description": "Влаштування бетонних підлог"
@@ -30,6 +34,7 @@
   {
     "id": 5,
     "img": "/img/gallery/gallery-5-min.jpg",
+    "img540": "/img/gallery/w540/gallery-5-min-w540.jpg",
     "thumbs": "/img/gallery/gallery-thumbs-5-min.jpg",
     "title": "ПрАО «Интеркорн Корн Проссесинг Индастри»",
     "description": "Влаштування полімерних підлог (BASF, Sherwin Williams)"
@@ -37,6 +42,7 @@
   {
     "id": 6,
     "img": "/img/gallery/gallery-6-min.jpg",
+    "img540": "/img/gallery/w540/gallery-6-min-w540.jpg",
     "thumbs": "/img/gallery/gallery-thumbs-6-min.jpg",
     "title": "ТОВ «ІНТЕРПАЙП УКРАЇНА»",
     "description": "Влаштування бетонних підлог"
@@ -44,6 +50,7 @@
   {
     "id": 7,
     "img": "/img/gallery/gallery-7-min.jpg",
+    "img540": "/img/gallery/w540/gallery-7-min-w540.jpg",
     "thumbs": "/img/gallery/gallery-thumbs-7-min.jpg",
     "title": "ТОВ «ІНТЕРПАЙП УКРАЇНА»",
     "description": "Влаштування бетонних підлог"
@@ -51,6 +58,7 @@
   {
     "id": 8,
     "img": "/img/gallery/gallery-8-min.jpg",
+    "img540": "/img/gallery/w540/gallery-8-min-w540.jpg",
     "thumbs": "/img/gallery/gallery-thumbs-8-min.jpg",
     "title": "ТОВ «РУБІКОН-ПАСТА»",
     "description": "Влаштування бетонного покриття виробничого приміщення"
@@ -58,6 +66,7 @@
   {
     "id": 9,
     "img": "/img/gallery/gallery-9-min.jpg",
+    "img540": "/img/gallery/w540/gallery-9-min-w540.jpg",
     "thumbs": "/img/gallery/gallery-thumbs-9-min.jpg",
     "title": "ТОВ «РУБІКОН-ПАСТА»",
     "description": "Влаштування бетонного покриття виробничого приміщення"
@@ -65,6 +74,7 @@
   {
     "id": 10,
     "img": "/img/gallery/gallery-10-min.jpg",
+    "img540": "/img/gallery/w540/gallery-10-min-w540.jpg",
     "thumbs": "/img/gallery/gallery-thumbs-10-min.jpg",
     "title": "ТОВ «РУБІКОН-ПАСТА»",
     "description": "Влаштування бетонного покриття виробничого приміщення"
@@ -72,6 +82,7 @@
   {
     "id": 11,
     "img": "/img/gallery/gallery-11-min.jpg",
+    "img540": "/img/gallery/w540/gallery-11-min-w540.jpg",
     "thumbs": "/img/gallery/gallery-thumbs-11-min.jpg",
     "title": "ТОВ «ЗОЛОТИЙ ЛЕВ»",
     "description": "Влаштування бетонної підлоги з затиранням верхнього зміцнюючого шару топпінг"
@@ -79,6 +90,7 @@
   {
     "id": 12,
     "img": "/img/gallery/gallery-12-min.jpg",
+    "img540": "/img/gallery/w540/gallery-12-min-w540.jpg",
     "thumbs": "/img/gallery/gallery-thumbs-12-min.jpg",
     "title": "ТОВ «ЗОЛОТИЙ ЛЕВ»",
     "description": "Влаштування бетонної підлоги з затиранням верхнього зміцнюючого шару топпінг"
@@ -86,6 +98,7 @@
   {
     "id": 13,
     "img": "/img/gallery/gallery-13-min.jpg",
+    "img540": "/img/gallery/w540/gallery-13-min-w540.jpg",
     "thumbs": "/img/gallery/gallery-thumbs-13-min.jpg",
     "title": "ТОВ «ЗОЛОТИЙ ЛЕВ»",
     "description": "Влаштування бетонної підлоги з затиранням верхнього зміцнюючого шару топпінг"
@@ -93,6 +106,7 @@
   {
     "id": 14,
     "img": "/img/gallery/gallery-14-min.jpg",
+    "img540": "/img/gallery/w540/gallery-14-min-w540.jpg",
     "thumbs": "/img/gallery/gallery-thumbs-14-min.jpg",
     "title": "ТОВ «ЗОЛОТИЙ ЛЕВ»",
     "description": "Влаштування бетонної підлоги з затиранням верхнього зміцнюючого шару топпінг"
@@ -100,6 +114,7 @@
   {
     "id": 15,
     "img": "/img/gallery/gallery-15-min.jpg",
+    "img540": "/img/gallery/w540/gallery-15-min-w540.jpg",
     "thumbs": "/img/gallery/gallery-thumbs-15-min.jpg",
     "title": "ТОВ «ЗОЛОТИЙ ЛЕВ»",
     "description": "Влаштування бетонної підлоги з затиранням верхнього зміцнюючого шару топпінг"
@@ -107,6 +122,7 @@
   {
     "id": 16,
     "img": "/img/gallery/gallery-16-min.jpg",
+    "img540": "/img/gallery/w540/gallery-16-min-w540.jpg",
     "thumbs": "/img/gallery/gallery-thumbs-16-min.jpg",
     "title": "ТОВ «РЕНТА-ПРИМ»",
     "description": "Влаштування з/б конструкцій, бетонних пандусів, під'їздів. Виготовлення та монтаж металоконструкцій"
@@ -114,6 +130,7 @@
   {
     "id": 17,
     "img": "/img/gallery/gallery-17-min.jpg",
+    "img540": "/img/gallery/w540/gallery-17-min-w540.jpg",
     "thumbs": "/img/gallery/gallery-thumbs-17-min.jpg",
     "title": "ТОВ «РЕНТА-ПРИМ»",
     "description": "Влаштування з/б конструкцій, бетонних пандусів, під'їздів. Виготовлення та монтаж металоконструкцій"
@@ -121,6 +138,7 @@
   {
     "id": 18,
     "img": "/img/gallery/gallery-18-min.jpg",
+    "img540": "/img/gallery/w540/gallery-18-min-w540.jpg",
     "thumbs": "/img/gallery/gallery-thumbs-18-min.jpg",
     "title": "ТОВ «РЕНТА-ПРИМ»",
     "description": "Влаштування з/б конструкцій, бетонних пандусів, під'їздів. Виготовлення та монтаж металоконструкцій"
@@ -128,6 +146,7 @@
   {
     "id": 19,
     "img": "/img/gallery/gallery-19-min.jpg",
+    "img540": "/img/gallery/w540/gallery-19-min-w540.jpg",
     "thumbs": "/img/gallery/gallery-thumbs-19-min.jpg",
     "title": "ТОВ «РЕНТА-ПРИМ»",
     "description": "Влаштування з/б конструкцій, бетонних пандусів, під'їздів. Виготовлення та монтаж металоконструкцій"
@@ -135,6 +154,7 @@
   {
     "id": 20,
     "img": "/img/gallery/gallery-20-min.jpg",
+    "img540": "/img/gallery/w540/gallery-20-min-w540.jpg",
     "thumbs": "/img/gallery/gallery-thumbs-20-min.jpg",
     "title": "ТОВ «РЕНТА-ПРИМ»",
     "description": "Влаштування з/б конструкцій, бетонних пандусів, під'їздів. Виготовлення та монтаж металоконструкцій"
@@ -142,6 +162,7 @@
   {
     "id": 21,
     "img": "/img/gallery/gallery-21-min.jpg",
+    "img540": "/img/gallery/w540/gallery-21-min-w540.jpg",
     "thumbs": "/img/gallery/gallery-thumbs-21-min.jpg",
     "title": "ТОВ «РЕНТА-ПРИМ»",
     "description": "Влаштування з/б конструкцій, бетонних пандусів, під'їздів. Виготовлення та монтаж металоконструкцій"
@@ -149,6 +170,7 @@
   {
     "id": 22,
     "img": "/img/gallery/gallery-22-min.jpg",
+    "img540": "/img/gallery/w540/gallery-22-min-w540.jpg",
     "thumbs": "/img/gallery/gallery-thumbs-22-min.jpg",
     "title": "ТОВ «РЕНТА-ПРИМ»",
     "description": "Влаштування з/б конструкцій, бетонних пандусів, під'їздів. Виготовлення та монтаж металоконструкцій"
@@ -156,6 +178,7 @@
   {
     "id": 23,
     "img": "/img/gallery/gallery-23-min.jpg",
+    "img540": "/img/gallery/w540/gallery-23-min-w540.jpg",
     "thumbs": "/img/gallery/gallery-thumbs-23-min.jpg",
     "title": "ТОВ \"ТБ \"НОВІС\"",
     "description": "Влаштування бетонної підлоги з затиранням верхнього зміцнюючого шару  топпінг, з попередньою підготовкою основи"
@@ -163,6 +186,7 @@
   {
     "id": 24,
     "img": "/img/gallery/gallery-24-min.jpg",
+    "img540": "/img/gallery/w540/gallery-24-min-w540.jpg",
     "thumbs": "/img/gallery/gallery-thumbs-24-min.jpg",
     "title": "ТОВ \"ТБ \"НОВІС\"",
     "description": "Влаштування бетонної підлоги з затиранням верхнього зміцнюючого шару  топпінг, з попередньою підготовкою основи"
@@ -170,6 +194,7 @@
   {
     "id": 25,
     "img": "/img/gallery/gallery-25-min.jpg",
+    "img540": "/img/gallery/w540/gallery-25-min-w540.jpg",
     "thumbs": "/img/gallery/gallery-thumbs-25-min.jpg",
     "title": "ТОВ \"ТБ \"НОВІС\"",
     "description": "Влаштування бетонної підлоги з затиранням верхнього зміцнюючого шару  топпінг, з попередньою підготовкою основи"
@@ -177,6 +202,7 @@
   {
     "id": 26,
     "img": "/img/gallery/gallery-26-min.jpg",
+    "img540": "/img/gallery/w540/gallery-26-min-w540.jpg",
     "thumbs": "/img/gallery/gallery-thumbs-26-min.jpg",
     "title": "ТОВ \"ТБ \"НОВІС\"",
     "description": "Влаштування бетонної підлоги з затиранням верхнього зміцнюючого шару  топпінг, з попередньою підготовкою основи"
@@ -184,6 +210,7 @@
   {
     "id": 27,
     "img": "/img/gallery/gallery-27-min.jpg",
+    "img540": "/img/gallery/w540/gallery-27-min-w540.jpg",
     "thumbs": "/img/gallery/gallery-thumbs-27-min.jpg",
     "title": "ТОВ \"ТБ \"НОВІС\"",
     "description": "Влаштування бетонної підлоги з затиранням верхнього зміцнюючого шару  топпінг, з попередньою підготовкою основи"
@@ -191,6 +218,7 @@
   {
     "id": 28,
     "img": "/img/gallery/gallery-28-min.jpg",
+    "img540": "/img/gallery/w540/gallery-28-min-w540.jpg",
     "thumbs": "/img/gallery/gallery-thumbs-28-min.jpg",
     "title": "ТОВ \"ТБ \"НОВІС\"",
     "description": "Влаштування бетонної підлоги з затиранням верхнього зміцнюючого шару  топпінг, з попередньою підготовкою основи"
@@ -198,6 +226,7 @@
   {
     "id": 29,
     "img": "/img/gallery/gallery-29-min.jpg",
+    "img540": "/img/gallery/w540/gallery-29-min-w540.jpg",
     "thumbs": "/img/gallery/gallery-thumbs-29-min.jpg",
     "title": "«Євген Ткаченко двері та меблі»",
     "description": "Влаштування фінішної бетонної основи"
@@ -205,6 +234,7 @@
   {
     "id": 30,
     "img": "/img/gallery/gallery-30-min.jpg",
+    "img540": "/img/gallery/w540/gallery-30-min-w540.jpg",
     "thumbs": "/img/gallery/gallery-thumbs-30-min.jpg",
     "title": "«Євген Ткаченко двері та меблі»",
     "description": "Влаштування фінішної бетонної основи"
@@ -212,6 +242,7 @@
   {
     "id": 31,
     "img": "/img/gallery/gallery-31-min.jpg",
+    "img540": "/img/gallery/w540/gallery-31-min-w540.jpg",
     "thumbs": "/img/gallery/gallery-thumbs-31-min.jpg",
     "title": "«Євген Ткаченко двері та меблі»",
     "description": "Влаштування фінішної бетонної основи"
@@ -219,6 +250,7 @@
   {
     "id": 32,
     "img": "/img/gallery/gallery-32-min.jpg",
+    "img540": "/img/gallery/w540/gallery-32-min-w540.jpg",
     "thumbs": "/img/gallery/gallery-thumbs-32-min.jpg",
     "title": "«Євген Ткаченко двері та меблі»",
     "description": "Влаштування фінішної бетонної основи"

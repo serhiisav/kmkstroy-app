@@ -7,10 +7,13 @@ import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/navigation";
 import "swiper/css/thumbs";
+import { useTranslation } from "react-i18next";
 
 
 export default function Partners() {
     const partnersRef = useRef();
+    const { t } = useTranslation();
+
     const partners = [
         {
             name: 'fibermix',
@@ -83,7 +86,7 @@ export default function Partners() {
     return (
         <>
             <section ref={partnersRef} className="section-partners" id='partners'>
-                <h1 className='section-partners-title'>Наші Партнери</h1>
+                <h1 className='section-partners-title'>{t("partners.title")}</h1>
                 <div className='partners-wrapper'>
                     <Swiper
                         loop={true}

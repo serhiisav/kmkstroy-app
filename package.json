@@ -21,6 +21,7 @@
     "gh-pages": "^3.2.3",
     "http-proxy": "^1.18.1",
     "i18next": "^21.8.4",
+    "i18next-browser-languagedetector": "^6.1.4",
     "i18next-http-backend": "^1.4.0",
     "nodemon": "^2.0.16",
     "prop-types": "^15.8.1",

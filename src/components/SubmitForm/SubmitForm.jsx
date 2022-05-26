@@ -6,11 +6,13 @@ import NumberFormat from 'react-number-format';
 import OrderFormField from "./OrderFormField";
 import axios from "axios";
 import { useInViewport } from 'react-in-viewport';
+import { useTranslation } from "react-i18next";
 
 
 const SubmitForm = () => {
     const formRef = useRef();
     const { inViewport } = useInViewport(formRef);
+    const { t } = useTranslation();
 
     const sendEmail = (data) => {
         const options = {
@@ -44,7 +46,7 @@ const SubmitForm = () => {
 
     return (
         <section ref={formRef} className="section-form" id="contacts">
-            <h1 className="section-form-title">Надіслати нам повідомлення</h1>
+            <h1 className="section-form-title">{t("submitForm.title")}</h1>
             <Formik
                 initialValues={{ name: '', company: '', email: '', phone: '', message: '' }}
                 validationSchema={CartFormSchema}
@@ -59,7 +61,7 @@ const SubmitForm = () => {
                     <div className={inViewport ? 'form-wrapper animate__animated animate__fadeInUp animate__delay-0.5s' : 'form-wrapper-none'}>
                         <div className="form-company-info">
                             <h3 className="form-brand">
-                                KMKSTROY LLC
+                                {t("submitForm.company")}
                             </h3>
                             <ul>
                                 <li><svg className="form-svg" xmlns="http://www.w3.org/2000/svg" height="16px" viewBox="0 0 24 24" width="16px" fill="#f8f8f8"><path d="M0 0h24v24H0V0z" fill="none" /><path d="M15.5 1h-8C6.12 1 5 2.12 5 3.5v17C5 21.88 6.12 23 7.5 23h8c1.38 0 2.5-1.12 2.5-2.5v-17C18 2.12 16.88 1 15.5 1zm-4 21c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm4.5-4H7V4h9v14z" /></svg> +38(097)-113-30-45</li>
@@ -71,18 +73,18 @@ const SubmitForm = () => {
                             <Form
                                 className="form">
                                 <p>
-                                    <OrderFormField label="Ім'я *" name="name" id="name" type="text" />
+                                    <OrderFormField label={t("submitForm.label_name")} name="name" id="name" type="text" />
                                 </p>
                                 <p>
-                                    <OrderFormField label="Компанія" id="company" name="company" type="text" />
+                                    <OrderFormField label={t("submitForm.label_company")} id="company" name="company" type="text" />
                                 </p>
                                 <p>
-                                    <OrderFormField label="Email Адреса *" id="email" name="email" type="email" />
+                                    <OrderFormField label={t("submitForm.label_email")} id="email" name="email" type="email" />
                                 </p>
                                 <p>
                                     <label
                                         className={touched.phone && errors.phone ? "error-form" : null}
-                                        htmlFor="phone">Номер телефону *
+                                        htmlFor="phone">{t("submitForm.label_phone")}
                                     </label>
                                     <NumberFormat
                                         onBlur={event => handleBlur(event)}
@@ -90,7 +92,7 @@ const SubmitForm = () => {
                                         id="phone"
                                         value={values.phone}
                                         name="phone"
-                                        format="+38 (###) ###-##-##" allowEmptyFormatting mask="_"
+                                        format="+## (###) ###-##-##" allowEmptyFormatting mask="_"
                                         onValueChange={(values) => {
                                             const { value } = values;
                                             setFieldValue('phone', value);
@@ -101,7 +103,7 @@ const SubmitForm = () => {
                                 <p className="full">
                                     <label
                                         className={touched.message && errors.message ? "error-form" : null}
-                                        htmlFor="message">Повідомлення *
+                                        htmlFor="message">{t("submitForm.label_message")}
                                     </label>
                                     <Field
                                         as="textarea"
@@ -112,7 +114,7 @@ const SubmitForm = () => {
                                     />
                                 </p>
                                 <p className="full">
-                                    <button className="form-submit" type="submit">Надіслати</button>
+                                    <button className="form-submit" type="submit">{t("submitForm.button_send")}</button>
                                 </p>
                             </Form>
                         </div>

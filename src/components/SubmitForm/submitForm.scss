@@ -112,9 +112,10 @@
     border: none;
     font-weight: bold;
     color: #f8f8f8;
-
+    font-size: 1em;
     text-transform: uppercase;
     cursor: pointer;
+    padding: 12px;
 
     &:hover {
       background: #485e74d5;

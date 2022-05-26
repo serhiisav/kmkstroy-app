@@ -67,11 +67,13 @@
 }
 
 .gallery-button-load {
+  min-width: 200px;
   color: #ffffff;
   background-color: #3a4d67;
   border: none;
   text-transform: uppercase;
   display: flex;
+  justify-content: center;
   gap: 2px;
   cursor: pointer;
   align-items: center;

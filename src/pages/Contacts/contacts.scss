@@ -26,6 +26,8 @@
   & .contacts-logo-wrap {
     @include flexColumn;
     text-align: center;
+    height: 100%;
+    justify-content: space-between;
 
     & .contacts-logo {
       width: 75px;
@@ -47,15 +49,23 @@
           padding-top: 10px;
         }
       }
+      & .contacts-logo-subtitle {
+        margin: 5px 0 0;
+        color: $colorTextWhite;
+      }
     }
   }
 
   & .contacts-address {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    height: 100%;
+    justify-content: space-between;
     grid-row: 1/3;
     grid-column: 2/3;
     @media (min-width: 835px) {
       grid-row: 1;
-
       grid-column: 2/3;
     }
     & .contacts-address-title {
@@ -68,7 +78,6 @@
       display: flex;
       align-items: center;
       column-gap: 10px;
-      margin-top: 16px;
 
       & .contacts-link {
         text-decoration: none;
@@ -104,8 +113,7 @@
   color: $colorTextWhite;
 }
 
-.contacts-address-content,
-.contacts-logo-subtitle {
+.contacts-address-content {
   color: $colorTextWhite;
   margin: 0;
 }

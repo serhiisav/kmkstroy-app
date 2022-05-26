@@ -60,9 +60,9 @@ function Header() {
                         >
                             <img
                                 className="header-logo"
-                                src={process.env.PUBLIC_URL + t('logo_header')}
-                                onMouseOver={e => e.currentTarget.src = process.env.PUBLIC_URL + t('logo-hover_header')}
-                                onMouseOut={e => e.currentTarget.src = process.env.PUBLIC_URL + t('logo_header')}
+                                src={process.env.PUBLIC_URL + t('header.logo')}
+                                onMouseOver={e => e.currentTarget.src = process.env.PUBLIC_URL + t('header.logo-hover')}
+                                onMouseOut={e => e.currentTarget.src = process.env.PUBLIC_URL + t('header.logo')}
                                 alt="logo"
                                 height='75' />
                         </Link>
@@ -82,7 +82,7 @@ function Header() {
                                         }}
                                     >
                                         <img className="header-nav-item-icon" src={process.env.PUBLIC_URL + '/img/icon-home.svg'} alt="icon-home" />
-                                        {t('nav_home')}
+                                        {t('header.nav_home')}
                                     </Link>
                                 </li>
                                 <li className="header-nav-item">
@@ -100,7 +100,7 @@ function Header() {
                                         }}
                                     >
                                         <img className="header-nav-item-icon" src={process.env.PUBLIC_URL + '/img/icon-about.svg'} alt="icon-about" />
-                                        {t('nav_about')}
+                                        {t('header.nav_about')}
                                     </Link>
                                 </li>
                                 <li className="header-nav-item">
@@ -117,7 +117,7 @@ function Header() {
                                         }}
                                     >
                                         <img className="header-nav-item-icon" src={process.env.PUBLIC_URL + '/img/icon-services.svg'} alt="icon-services" />
-                                        {t('nav_services')}
+                                        {t('header.nav_services')}
                                     </Link>
                                 </li>
                                 <li className="header-nav-item"
@@ -135,7 +135,7 @@ function Header() {
                                         }}
                                     >
                                         <img className="header-nav-item-icon" src={process.env.PUBLIC_URL + '/img/icon-gallery.svg'} alt="icon-gallery" />
-                                        {t('nav_gallery')}
+                                        {t('header.nav_gallery')}
                                     </Link>
                                 </li>
                                 <li className="header-nav-item"
@@ -153,7 +153,7 @@ function Header() {
                                         }}
                                     >
                                         <img className="header-nav-item-icon" src={process.env.PUBLIC_URL + '/img/icon-partners.svg'} alt="icon-partners" />
-                                        {t('nav_partners')}
+                                        {t('header.nav_partners')}
                                     </Link>
                                 </li>
                                 <li className="header-nav-item"
@@ -171,7 +171,7 @@ function Header() {
                                         }}
                                     >
                                         <img className="header-nav-item-icon" src={process.env.PUBLIC_URL + '/img/icon-contacts.svg'} alt="icon-contacts" />
-                                        {t('nav_contacts')}
+                                        {t('header.nav_contacts')}
                                     </Link>
                                 </li>
                             </ul>

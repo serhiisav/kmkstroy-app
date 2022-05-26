@@ -9,9 +9,6 @@
   box-sizing: border-box;
 }
 
-html {
-  scroll-behavior: smooth;
-}
 @-moz-document url-prefix() {
   html {
     scrollbar-width: none;

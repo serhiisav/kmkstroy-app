@@ -8,7 +8,7 @@ let CartFormSchema = object().shape({
     company: string()
         .max(20, 'Must be 20 characters or less'),
     email: string().email().required('Required'),
-    phone: string().length(10, 'Phone number is not valid').required('Required'),
+    phone: string().length(12, 'Phone number is not valid'),
     message: string().required('Required')
 });
 

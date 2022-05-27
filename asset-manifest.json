@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/kmkstroy-app/static/css/main.b71eeb3f.css",
-    "main.js": "/kmkstroy-app/static/js/main.e1c915ee.js",
+    "main.js": "/kmkstroy-app/static/js/main.e2b6c17a.js",
     "static/js/235.393b65f0.chunk.js": "/kmkstroy-app/static/js/235.393b65f0.chunk.js",
     "static/js/72.dd63e7bb.chunk.js": "/kmkstroy-app/static/js/72.dd63e7bb.chunk.js",
     "static/media/background-header-1-min.jpg": "/kmkstroy-app/static/media/background-header-1-min.e9bcd977ad3565700a2b.jpg",
@@ -52,10 +52,10 @@
     "static/media/gallery-chevron-right.svg": "/kmkstroy-app/static/media/gallery-chevron-right.375a2839da22ffa17015.svg",
     "static/media/flag-ua.svg": "/kmkstroy-app/static/media/flag-ua.f965fe30eca723bf1a44.svg",
     "main.b71eeb3f.css.map": "/kmkstroy-app/static/css/main.b71eeb3f.css.map",
-    "main.e1c915ee.js.map": "/kmkstroy-app/static/js/main.e1c915ee.js.map"
+    "main.e2b6c17a.js.map": "/kmkstroy-app/static/js/main.e2b6c17a.js.map"
   },
   "entrypoints": [
     "static/css/main.b71eeb3f.css",
-    "static/js/main.e1c915ee.js"
+    "static/js/main.e2b6c17a.js"
   ]
 }

@@ -31,7 +31,9 @@
   },
   "gallery": {
     "title": "OUR WORK",
-    "button-load": "Load more"
+    "button-load": "Load more",
+    "button-isLoading": "Loading...",
+    "button-delete": "Delete"
   },
   "partners": {
     "title": "Our Partnerships"

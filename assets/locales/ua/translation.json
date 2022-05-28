@@ -31,7 +31,9 @@
   },
   "gallery": {
     "title": "Наші роботи",
-    "button-load": "Завантажити більше"
+    "button-load": "Завантажити ще",
+    "button-isLoading": "Завантаження...",
+    "button-delete": "Видалити"
   },
   "partners": {
     "title": "Наші Партнери"

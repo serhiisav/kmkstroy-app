@@ -3,7 +3,8 @@ import {
     ADD_IMAGES_FAILURE,
     ADD_IMAGES_STARTED,
     SET_CURRENT_ID_IMAGE,
-    SET_HAMBURGER_OPEN
+    SET_HAMBURGER_OPEN,
+    ADD_IMAGES_FINISHED
 } from './types'
 
 export const addAllImagesSuccess = (images) => {
@@ -22,6 +23,12 @@ export const addImagesFailure = (error) => {
 export const addImagesStarted = () => {
     return {
         type: ADD_IMAGES_STARTED,
+    }
+}
+
+export const addImagesFinished = () => {
+    return {
+        type: ADD_IMAGES_FINISHED,
     }
 }
 

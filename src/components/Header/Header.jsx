@@ -34,7 +34,6 @@ function Header() {
 
     const toggleHamburger = (e) => {
         if (
-            // e.target.className === 'header-nav-link' ||
             e.target.className === 'check' ||
             e.target.className === 'check-span') {
             dispatch(setHamburgerOpen(!hamburgerOpen));
@@ -74,7 +73,6 @@ function Header() {
                                         smooth={true}
                                         offset={-84}
                                         duration={500}
-                                        // delay={10}
                                         to="home"
                                         className="header-nav-link"
                                         onClick={e => {
@@ -91,12 +89,10 @@ function Header() {
                                         smooth={true}
                                         offset={-115}
                                         duration={500}
-                                        // delay={10}
                                         to="about"
                                         className="header-nav-link"
                                         onClick={e => {
                                             toggleHamburger(e)
-
                                         }}
                                     >
                                         <img className="header-nav-item-icon" src={process.env.PUBLIC_URL + '/img/icon-about.svg'} alt="icon-about" />
@@ -109,7 +105,6 @@ function Header() {
                                         smooth={true}
                                         offset={-83}
                                         duration={500}
-                                        // delay={10}
                                         to='services'
                                         className="header-nav-link"
                                         onClick={e => {
@@ -127,7 +122,6 @@ function Header() {
                                         smooth={true}
                                         offset={-82}
                                         duration={500}
-                                        // delay={10}
                                         to='gallery'
                                         className="header-nav-link"
                                         onClick={e => {
@@ -145,7 +139,6 @@ function Header() {
                                         smooth={true}
                                         offset={-82}
                                         duration={500}
-                                        // delay={10}
                                         to='partners'
                                         className="header-nav-link"
                                         onClick={e => {
@@ -163,7 +156,6 @@ function Header() {
                                         smooth={true}
                                         offset={-84}
                                         duration={500}
-                                        // delay={10}
                                         to='contacts'
                                         className="header-nav-link"
                                         onClick={e => {

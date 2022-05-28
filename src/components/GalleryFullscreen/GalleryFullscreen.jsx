@@ -1,14 +1,15 @@
 import './galleryFullscreen.scss'
 import React, { useState, useEffect, useRef } from 'react';
 import { useSelector } from 'react-redux';
-import { disableBodyScroll, clearAllBodyScrollLocks, enableBodyScroll } from 'body-scroll-lock';
+import { disableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
 import { Swiper, SwiperSlide } from "swiper/react";
-import { EffectFade, FreeMode, Navigation, Thumbs, } from "swiper";
+import { EffectFade, FreeMode, Navigation, Thumbs, Lazy } from "swiper";
 import "swiper/css";
 import 'swiper/css/effect-fade';
 import "swiper/css/free-mode";
 import "swiper/css/navigation";
 import "swiper/css/thumbs";
+import "swiper/css/lazy";
 import styled from 'styled-components';
 
 
@@ -44,7 +45,6 @@ const ThumbsStyled = styled.div`
     `;
 
 export default function GalleryFullscreen({ handleScreenClose, isOpen, isModal }) {
-    const isLoading = useSelector(state => state.isLoading);
     const galleryItems = useSelector(state => state.galleryItems);
     const idImage = useSelector(state => state.idImage);
     const [thumbsSwiper, setThumbsSwiper] = useState(null);
@@ -79,13 +79,14 @@ export default function GalleryFullscreen({ handleScreenClose, isOpen, isModal }
     useEffect(() => {
         if (isOpen) {
             disableBodyScroll(modalRef);
-        } else {
-            enableBodyScroll(modalRef);
+            if (isModal) {
+                getHeightAddressBar();
+                window.addEventListener("resize", getHeightAddressBar);
+            }
         }
-        if (isOpen && isModal) {
-            getHeightAddressBar();
-            window.addEventListener("resize", getHeightAddressBar);
-        }
+        // else {
+        //     // enableBodyScroll(modalRef);
+        // }
         return () => {
             clearAllBodyScrollLocks();
             window.removeEventListener("resize", getHeightAddressBar);
@@ -94,88 +95,109 @@ export default function GalleryFullscreen({ handleScreenClose, isOpen, isModal }
 
     return (
         <>
-            {isLoading ? <div className="lds-dual-ring"></div> :
-                <>
-                    <div ref={modalRef} className={isModal ? 'gallery-modal' : 'gallery-fullscreen'}>
-                        <img
-                            className={`button-swiper-close`}
-                            onClick={handleScreenClose}
-                            src={process.env.PUBLIC_URL + '/img/gallery-minimize.svg'} alt='close'
-                        />
-                        <Swiper
-                            style={{
-                                "--swiper-navigation-size": "60px",
-                            }}
-                            loop={true}
-                            onSwiper={setSwiper}
-                            speed={800}
-                            slidesPerView={1}
-                            loopedSlides={galleryItems.length}
-                            maxBackfaceHiddenSlides={5}
-                            navigation
-                            effect='fade'
-                            fadeEffect={{
-                                crossFade: true
-                            }}
-                            thumbs={{ swiper: thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null }}
-                            modules={[Navigation, Thumbs, EffectFade]}
-                            className="mySwiper"
-                        >
-                            {galleryItems.map((item) => (
-                                <SwiperSlide key={item.id}>
-                                    <div>
-                                        <img
-                                            className='fullscreen-gallery-image'
-                                            src={process.env.PUBLIC_URL + item.img}
-                                            alt={item.title}
-                                        />
-                                        <div className="mySwiper-text-content">
-                                            <p className='mySwiper-image-title'>{item.title}</p>
-                                            <p className='mySwiper-image-description'>{item.description}</p>
-                                        </div>
+            <>
+                <div ref={modalRef} className={isModal ? 'gallery-modal' : 'gallery-fullscreen'}>
+                    <img
+                        className={`button-swiper-close`}
+                        onClick={handleScreenClose}
+                        src={process.env.PUBLIC_URL + '/img/gallery-minimize.svg'} alt='close'
+                    />
+                    <Swiper
+                        style={{
+                            "--swiper-navigation-size": "60px",
+                        }}
+                        loop={true}
+                        onSwiper={setSwiper}
+                        speed={800}
+                        slidesPerView={1}
+                        // loopedSlides={galleryItems.length}
+                        maxBackfaceHiddenSlides={5}
+                        navigation
+                        effect='fade'
+                        fadeEffect={{
+                            crossFade: true
+                        }}
+                        preloadImages={false}
+                        lazy={
+                            {
+                                // checkInView: true,
+                                loadPrevNext: true,
+                                enabled: true,
+                                // loadOnTransitionStart: true,
+                                loadPrevNextAmount: 5,
+                                // elementClass: 'swiper-lazy',
+                                // loadedClass: 'swiper-lazy-loaded',
+                                // loadingClass: 'swiper-lazy-loading',
+                                // preloaderClass: 'swiper-lazy-preloader',
+                            }
+                        }
+                        thumbs={{ swiper: thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null }}
+                        modules={[Navigation, Thumbs, EffectFade, Lazy]}
+                        className="mySwiper"
+                    >
+                        {galleryItems.map((item) => (
+                            <SwiperSlide key={item.id}>
+                                <div>
+                                    <img
+                                        className='fullscreen-gallery-image swiper-lazy'
+                                        data-src={process.env.PUBLIC_URL + item.img}
+                                        alt=''
+                                    />
+                                    <div className="mySwiper-text-content">
+                                        <p className='mySwiper-image-title'>{item.title}</p>
+                                        <p className='mySwiper-image-description'>{item.description}</p>
                                     </div>
-                                </SwiperSlide>
-                            ))}
-                        </Swiper>
-                        <ThumbsStyled
-                            ref={thumbsRef} className='fullscreen-gallery-thumbs-up'
-                            top={-topThumbs}
+                                    <div className="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                                </div>
+                            </SwiperSlide>
+                        ))}
+                    </Swiper>
+                    <ThumbsStyled
+                        ref={thumbsRef} className='fullscreen-gallery-thumbs-up'
+                        top={-topThumbs}
+                    >
+                        <Swiper
+                            onSwiper={setThumbsSwiper}
+                            loop={true}
+                            spaceBetween={10}
+                            slidesPerView={3}
+                            freeMode={true}
+                            grabCursor
+                            // loopedSlides={galleryItems.length}
+                            preloadImages={false}
+                            lazy={
+                                {
+                                    loadPrevNext: true,
+                                    enabled: true,
+                                    loadPrevNextAmount: 5,
+                                }
+                            }
+                            modules={[FreeMode, Navigation, Thumbs, Lazy]}
+                            className="mySwiper-thumbs"
+                            breakpoints=
+                            {
+                                {
+                                    835: { slidesPerView: 5 }
+                                }
+                            }
                         >
-                            <Swiper
-                                onSwiper={setThumbsSwiper}
-                                loop={true}
-                                spaceBetween={10}
-                                slidesPerView={3}
-                                freeMode={true}
-                                grabCursor
-                                loopedSlides={galleryItems.length}
-                                modules={[FreeMode, Navigation, Thumbs]}
-                                className="mySwiper-thumbs"
-                                breakpoints=
-                                {
-                                    {
-                                        835: { slidesPerView: 5 }
-                                    }
-                                }
-                            >
-                                {
-                                    galleryItems.map((item) => (
-                                        <SwiperSlide key={item.id}>
-                                            <div>
-                                                <img
-                                                    className='thumbs-image'
-                                                    src={process.env.PUBLIC_URL + item.thumbs}
-                                                    alt={item.title}
-                                                />
-                                            </div>
-                                        </SwiperSlide>
-                                    ))
-                                }
-                            </Swiper>
-                        </ThumbsStyled>
-                    </div>
-                </>
-            }
+                            {
+                                galleryItems.map((item) => (
+                                    <SwiperSlide key={item.id}>
+                                        <div>
+                                            <img
+                                                className='thumbs-image swiper-lazy'
+                                                data-src={process.env.PUBLIC_URL + item.thumbs}
+                                                alt=''
+                                            />
+                                        </div>
+                                    </SwiperSlide>
+                                ))
+                            }
+                        </Swiper>
+                    </ThumbsStyled>
+                </div>
+            </>
         </>
     );
 }

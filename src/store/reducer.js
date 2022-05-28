@@ -11,6 +11,9 @@ const reducer = (state = initialState, action) => {
         case 'ADD_IMAGES_STARTED': {
             return { ...state, isLoading: true }
         }
+        case 'ADD_IMAGES_FINISHED': {
+            return { ...state, isLoading: false }
+        }
         case 'ADD_ALL_IMAGES': {
             return { ...state, galleryItems: action.payload.images, isLoading: false, error: null }
         }

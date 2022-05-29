@@ -11,6 +11,7 @@ import "swiper/css/navigation";
 import "swiper/css/thumbs";
 import "swiper/css/lazy";
 import styled from 'styled-components';
+import i18n from '../../i18n';
 
 
 const ThumbsStyled = styled.div`
@@ -58,7 +59,7 @@ export default function GalleryFullscreen({ handleScreenClose, isOpen, isModal }
     useEffect(() => {
         if (swiper && isOpen) {
             if (!isNaN(idImage) && typeof idImage === "number" && Number.isInteger(idImage) && Number.isFinite(idImage) && idImage >= 0) {
-                setIndexSlide(parseInt(Math.abs(idImage - galleryItems.length), 10));
+                setIndexSlide(parseInt(Math.abs(idImage - galleryItems.length - 1), 10));
             } else {
                 console.log('incorrect id item');
             }
@@ -84,9 +85,6 @@ export default function GalleryFullscreen({ handleScreenClose, isOpen, isModal }
                 window.addEventListener("resize", getHeightAddressBar);
             }
         }
-        // else {
-        //     // enableBodyScroll(modalRef);
-        // }
         return () => {
             clearAllBodyScrollLocks();
             window.removeEventListener("resize", getHeightAddressBar);
@@ -110,7 +108,6 @@ export default function GalleryFullscreen({ handleScreenClose, isOpen, isModal }
                         onSwiper={setSwiper}
                         speed={800}
                         slidesPerView={1}
-                        // loopedSlides={galleryItems.length}
                         maxBackfaceHiddenSlides={5}
                         navigation
                         effect='fade'
@@ -120,15 +117,9 @@ export default function GalleryFullscreen({ handleScreenClose, isOpen, isModal }
                         preloadImages={false}
                         lazy={
                             {
-                                // checkInView: true,
                                 loadPrevNext: true,
                                 enabled: true,
-                                // loadOnTransitionStart: true,
-                                loadPrevNextAmount: 5,
-                                // elementClass: 'swiper-lazy',
-                                // loadedClass: 'swiper-lazy-loaded',
-                                // loadingClass: 'swiper-lazy-loading',
-                                // preloaderClass: 'swiper-lazy-preloader',
+                                loadPrevNextAmount: 5
                             }
                         }
                         thumbs={{ swiper: thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null }}
@@ -144,8 +135,8 @@ export default function GalleryFullscreen({ handleScreenClose, isOpen, isModal }
                                         alt=''
                                     />
                                     <div className="mySwiper-text-content">
-                                        <p className='mySwiper-image-title'>{item.title}</p>
-                                        <p className='mySwiper-image-description'>{item.description}</p>
+                                        <p className='mySwiper-image-title'>{i18n.resolvedLanguage === "ua" ? item.title_ua : item.title_en}</p>
+                                        <p className='mySwiper-image-description'>{i18n.resolvedLanguage === "ua" ? item.description_ua : item.description_en}</p>
                                     </div>
                                     <div className="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
                                 </div>
@@ -163,7 +154,6 @@ export default function GalleryFullscreen({ handleScreenClose, isOpen, isModal }
                             slidesPerView={3}
                             freeMode={true}
                             grabCursor
-                            // loopedSlides={galleryItems.length}
                             preloadImages={false}
                             lazy={
                                 {

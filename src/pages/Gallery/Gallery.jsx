@@ -8,13 +8,13 @@ import { isMobile } from 'react-device-detect';
 import Box from '@mui/material/Box';
 import Masonry from '@mui/lab/Masonry';
 import { useTranslation } from "react-i18next";
+import i18n from '../../i18n';
 
 
 
 
 export default function Gallery() {
     const dispatch = useDispatch();
-    const isLoading = useSelector(state => state.isLoading);
     const galleryItems = useSelector(state => state.galleryItems);
     const [inModalWindow, setInModalWindow] = useState(false);
     const [numberImages, setNumberImages] = useState(6);
@@ -33,7 +33,6 @@ export default function Gallery() {
             setIsModal(true);
         } else return;
     }, []);
-
 
     const loadMoreImages = () => {
         setIsloadingMore(true);
@@ -71,10 +70,10 @@ export default function Gallery() {
             <section ref={galleryRef} className="section-gallery" id='gallery'>
                 <div className='container'>
                     <h1 className='section-gallery-title'>{t('gallery.title')}</h1>
-                    <Box sx={{ width: 1, minHeight: 250, overflow: 'hidden' }}>
+                    <Box sx={{ width: 1, minHeight: 'auto', overflow: 'hidden' }}>
                         <Masonry sx={{ width: 'auto' }} columns={{ xs: 1, sm: 2, md: 3 }} spacing={{ xs: 1, sm: 2, md: 3 }}>
                             {
-                                galleryItems.slice(0, numberImages).map((item, index) =>
+                                galleryItems.slice(0, numberImages).map((item) =>
                                     <div
                                         className='image-wrapper animate__animated animate__zoomIn animate__delay-1s'
                                         key={item.id}>
@@ -92,7 +91,8 @@ export default function Gallery() {
                                             <svg className='gallery-zoomIn-svg' xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
                                         </i>
                                         <div className="gallery-text-content">
-                                            <p className='gallery-image-title'>{item.title}</p>
+                                            <p className='gallery-image-title'>
+                                                {i18n.resolvedLanguage === "ua" ? item.title_ua : item.title_en}</p>
                                         </div>
                                     </div>
                                 )

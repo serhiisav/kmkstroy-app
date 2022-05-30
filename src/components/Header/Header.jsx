@@ -173,8 +173,8 @@ function Header() {
                             <div className="header-contacts">
                                 <div className="header-contacts-link-wrap">
                                     <img src={process.env.PUBLIC_URL + '/img/icon-phone.svg'} alt="icon-phone" />
-                                    <a className="header-contacts-link" href="tel:+380971133045"
-                                        onClick={e => toggleHamburger(e)}>+38(097)-113-30-45</a>
+                                    <a className="header-contacts-link" href="tel:+380675611900"
+                                        onClick={e => toggleHamburger(e)}>+38(067)-561-19-00</a>
                                 </div>
                                 <div className="header-contacts-link-wrap">
                                     <img src={process.env.PUBLIC_URL + '/img/icon-email.svg'} alt="icon-email" />

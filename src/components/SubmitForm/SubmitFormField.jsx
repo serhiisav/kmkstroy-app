@@ -1,7 +1,7 @@
 import React from "react";
 import { useField } from "formik";
 
-const OrderFormField = ({ label, ...props }) => {
+const SubmitFormField = ({ label, ...props }) => {
     const [field, meta] = useField(props);
     return (
         <>
@@ -11,4 +11,4 @@ const OrderFormField = ({ label, ...props }) => {
         </>
     )
 }
-export default OrderFormField;
+export default SubmitFormField;

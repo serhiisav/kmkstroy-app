@@ -1,7 +1,7 @@
 import { object, string } from 'yup';
 
 
-let CartFormSchema = object().shape({
+let SubmitFormSchema = object().shape({
     name: string()
         .max(15, 'Must be 15 characters or less')
         .required('Required'),
@@ -12,4 +12,4 @@ let CartFormSchema = object().shape({
     message: string().required('Required')
 });
 
-export default CartFormSchema;
+export default SubmitFormSchema;

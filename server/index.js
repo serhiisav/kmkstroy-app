@@ -21,53 +21,71 @@ app.use(cors({
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }))
 
-const oauth2Client = new google.auth.OAuth2(
+const OAuth2 = google.auth.OAuth2;
+const OAuth2_client = new OAuth2(
     process.env.REACT_APP_CLIENT_ID,
     process.env.REACT_APP_CLIENT_SECRET,
     process.env.REACT_APP_REDIRECT_URIS
 );
 
-oauth2Client.setCredentials({ refresh_token: process.env.REACT_APP_REFRESH_TOKEN });
+OAuth2_client.setCredentials({ refresh_token: process.env.REACT_APP_REFRESH_TOKEN });
+
+function getHtmlMessage(req) {
+    return `
+    <h3>Ви отримали повідомлення від: <span style='font-weight: normal'>${req.body.name}</span></h3>
+    <h4>Компанія: <span style='font-weight: normal'>${req.body.company}</span></h4>
+    <h4>Телефон: <span style='font-weight: normal'>${req.body.phone}</span></h4>
+    <h4>Мій email: <span style='font-weight: normal'>${req.body.email}</span></h4>
+    <p>${req.body.message}</p>
+`;
+}
+
+async function mailer(req) {
+    try {
+
+        const accessToken = await OAuth2_client.getAccessToken();
+        const transport = nodemailer.createTransport({
+            // pool: true,
+            service: 'Gmail',
+            auth: {
+                type: 'OAuth2',
+                user: process.env.REACT_APP_USER,
+                clientId: process.env.REACT_APP_CLIENT_ID,
+                clientSecret: process.env.REACT_APP_CLIENT_SECRET,
+                refreshToken: process.env.REACT_APP_REFRESH_TOKEN,
+                accessToken: accessToken,
+            },
+        });
+
+        const mail_options = {
+            from: `The KMKSTROY SITE <${process.env.REACT_APP_USER}>`,
+            to: process.env.REACT_APP_MAILTO,
+            subject: 'A Message From The KMKSTROY SITE',
+            html: getHtmlMessage(req),
+        }
+
+        const result = await transport.sendMail(mail_options)
+        return result;
+
+    } catch (error) {
+        return error
+    }
+}
 
 app.post('/', (req, res) => {
-    const html_message = `
-        <h3>Ви отримали повідомлення від: <span style='font-weight: normal'>${req.body.name}</span></h3>
-        <h4>Компанія: <span style='font-weight: normal'>${req.body.company}</span></h4>
-        <h4>Телефон: <span style='font-weight: normal'>${req.body.phone}</span></h4>
-        <h4>Мій email: <span style='font-weight: normal'>${req.body.email}</span></h4>
-        <p>${req.body.message}</p>
-    `;
 
-    const accessToken = oauth2Client.getAccessToken();
-    const transport = nodemailer.createTransport({
-        service: 'Gmail',
-        auth: {
-            type: 'OAuth2',
-            user: process.env.REACT_APP_USER,
-            clientId: process.env.REACT_APP_CLIENT_ID,
-            clientSecret: process.env.REACT_APP_CLIENT_SECRET,
-            refreshToken: process.env.REACT_APP_REFRESH_TOKEN,
-            accessToken: accessToken
-        }
-    })
-    const mail_options = {
-        from: `The KMKSTROY SITE <${process.env.REACT_APP_USER}>`,
-        to: process.env.REACT_APP_MAILTO,
-        subject: 'A Message From The KMKSTROY SITE',
-        html: html_message
-    }
-
-    transport.sendMail(mail_options, (error, result) => {
-        if (error) {
-            console.log('Error: ', error);
-            res.status(400).send('Bad Request');
-        } else {
-            console.log('Success!: ', result);
-            res.status(200).send('ok');
-        }
-    })
-    res.end()
-
+    mailer(req)
+        .then(result => {
+            console.log('Email sent...', result);
+            if (result.response.status && result.response.status !== 200) {
+                throw new Error(result.response.status)
+            }
+            res.type('application/json').sendStatus(200).end()
+        })
+        .catch((error) => {
+            console.log('ERROR! Status: ', error.message);
+            res.type('application/json').sendStatus(400).end()
+        })
 })
 
 // const server = https.createServer(httpsOptions, app).listen(port, () => {

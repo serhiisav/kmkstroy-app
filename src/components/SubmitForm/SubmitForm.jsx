@@ -29,7 +29,7 @@ const SubmitForm = () => {
 
         axios(options)
             .then(res => {
-                console.log(res.status);
+                // console.log(res);
                 if (res.status === 200) {
                     alert('Ваше повідомлення успішно надіслано');
                 } else {

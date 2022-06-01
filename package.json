@@ -1,5 +1,4 @@
 {
-  "homepage": "https://serhiisav.github.io/kmkstroy-app",
   "name": "kmkstroy-app",
   "version": "0.1.0",
   "private": true,
@@ -19,7 +18,6 @@
     "formik": "^2.2.9",
     "fscreen": "^1.2.0",
     "gh-pages": "^3.2.3",
-    "http-proxy": "^1.18.1",
     "i18next": "^21.8.4",
     "i18next-browser-languagedetector": "^6.1.4",
     "i18next-chained-backend": "^3.0.2",
@@ -37,7 +35,6 @@
     "react-number-format": "^4.9.3",
     "react-redux": "^7.2.8",
     "react-router-dom": "^6.3.0",
-    "react-router-hash-link": "^2.4.3",
     "react-scripts": "5.0.1",
     "react-scroll": "^1.8.7",
     "redux": "^4.1.2",

@@ -21,12 +21,8 @@ i18n
         backend: {
             backends: [
                 resourcesToBackend((lng, namespace, callback) => {
-                    // import(`./locales/${language}/${namespace}.json`)
                     import(`../public/assets/locales/${lng}/${namespace}.json`)
                         .then((resources) => {
-                            // console.log(namespace);
-                            // console.log(lng);
-                            // console.log(resources.about);
                             callback(null, resources)
                         })
                         .catch((error) => {
@@ -42,7 +38,6 @@ i18n
         // backend: {
         //     loadPath: process.env.PUBLIC_URL + '/assets/locales/{{lng}}/translation.json'
         // },
-        // debug: true,
         interpolation: {
             escapeValue: false
         },
@@ -51,7 +46,6 @@ i18n
             caches: ['localStorage', 'cookie'],
             lookupLocalStorage: 'i18nextLng',
         },
-        // react: { useSuspense: false }
     });
 
 

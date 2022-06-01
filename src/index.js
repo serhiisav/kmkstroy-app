@@ -10,13 +10,13 @@ import './i18n';
 ReactDOM.createRoot(document.getElementById('root')).render(
 
   <React.StrictMode>
-    <HashRouter>
-      {/* <BrowserRouter> */}
+    {/* <HashRouter> */}
+    <BrowserRouter>
       <Provider store={store}>
         <App />
       </Provider>
-      {/* </BrowserRouter> */}
-    </HashRouter>
+    </BrowserRouter>
+    {/* </HashRouter> */}
   </React.StrictMode>,
 
 );

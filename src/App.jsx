@@ -7,7 +7,7 @@ import Layout from './components/Layout/Layout';
 // import Gallery from './pages/Gallery/Gallery';
 // import Partners from './pages/Partners/Partners';
 // import Contacts from './pages/Contacts/Contacts';
-import { Suspense, useEffect } from 'react';
+import React, { Suspense, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { addAllImages } from './store/thunk';
 import ErrorPage from './pages/ErrorPage/ErrorPage';
@@ -25,7 +25,7 @@ function App() {
     <>
       <Suspense fullback={<p>Loading...</p>}>
         <Routes>
-          <Route exact path='/' element={<Layout />}>
+          <Route path='/' element={<Layout />}>
             {/* <Route path='home' element={<Intro />} />
           <Route path='about' element={<About />} />
           <Route path='services' element={<Services />} />
@@ -33,7 +33,7 @@ function App() {
           <Route path='partners' element={<Partners />} />
           <Route path='contacts' element={<Contacts />} /> */}
           </Route>
-          <Route exact={true} path='*' element={<ErrorPage />} />
+          <Route path='*' element={<ErrorPage />} />
         </Routes>
       </Suspense>
     </>

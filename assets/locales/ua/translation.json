@@ -46,7 +46,10 @@
     "label_email": "Email Адреса *",
     "label_phone": "Номер телефону",
     "label_message": "Повідомлення *",
-    "button_send": "Надіслати"
+    "button_send": "Надіслати",
+    "button_close": "Закрити",
+    "success_message": "Ваше повідомлення успішно надіслано.",
+    "error_message": "Помилка сервера! Будь ласка, повторіть запит пізніше."
   },
   "footer": {
     "logo": "/kmk-logo-ua.png",

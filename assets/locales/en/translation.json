@@ -20,17 +20,17 @@
     "subtitle-p2": "On the construction market of Ukraine since 2015",
     "description-p1": "The company has license with class responsibility CC2, CC3, and a high risk work licence.",
     "description-p2": "Our staff consists of qualified professionals with more than 10 years of experience.",
-    "description-p3": "The company has the material and technical base, equipment, tools, machines and mechanisms necessary to provide services at high level."
+    "description-p3": "The company has the material and technical base, equipment, tools, machines and mechanisms necessary to provide services on high level."
   },
   "services": {
-    "title": "The principal activities of the Company",
+    "title": "The main activities of the Company",
     "li1": "A full range of works on the installation of concrete floors",
     "li2": "Installation of polymer self-leveling floors (polyurethane, epoxy, polyurethane-cement)",
-    "li3": "Performance of construction-installation, facade, roofing and finishing works",
+    "li3": "Implementation of construction-installation, facade, roofing and finishing works",
     "li4": "Installation of engineering networks"
   },
   "gallery": {
-    "title": "OUR WORK",
+    "title": "OUR WORKS",
     "button-load": "Load more",
     "button-isLoading": "Loading...",
     "button-delete": "Delete"
@@ -46,7 +46,10 @@
     "label_email": "Email Address*",
     "label_phone": "Phone",
     "label_message": "Your Message *",
-    "button_send": "Send message"
+    "button_send": "Send message",
+    "button_close": "Close",
+    "success_message": "Your message was successfully sent.",
+    "error_message": "Server error! Please try again later."
   },
   "footer": {
     "logo": "/kmk-logo-en.svg",

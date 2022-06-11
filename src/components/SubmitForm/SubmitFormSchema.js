@@ -2,6 +2,8 @@ import { object, string } from 'yup';
 
 
 let SubmitFormSchema = object().shape({
+    _subject: string(),
+    _captcha: string(),
     name: string()
         .max(15, 'Must be 15 characters or less')
         .required('Required'),

@@ -1,5 +1,5 @@
 import './submitForm.scss'
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Formik, Form, Field } from 'formik';
 import SubmitFormSchema from "./SubmitFormSchema";
 import NumberFormat from 'react-number-format';
@@ -12,48 +12,85 @@ import { useTranslation } from "react-i18next";
 const SubmitForm = () => {
     const formRef = useRef();
     const { inViewport } = useInViewport(formRef);
-    const { t } = useTranslation();
+    const { t, i18n } = useTranslation();
+    const [messageSubmit, setMessageSubmit] = useState(null);
+    const [statusSubmit, setStatusSubmit] = useState(null);
+    const [isMessageSubmit, setIsMessageSubmit] = useState(false);
 
     const sendEmail = (data) => {
-        const options = {
-            method: "POST",
-            url: "http://localhost:5000/",
-            headers: {
-                // 'X-Requested-With': 'XMLHttpRequest',
-                'Accept': "application/json",
-                'Access-Control-Allow-Origin': '*',
-                "Content-type": "application/json; charset=UTF-8",
-            },
-            data: JSON.stringify(data)
-        }
+        // const options = {
+        //     method: "post",
+        //     // url: "//kmkstroy.com.ua:5001",
+        //     url: "http://localhost:5001/test",
+        //     headers: {
+        //         // 'X-Requested-With': 'XMLHttpRequest',
+        //         // 'Accept': "application/json",
+        //         'Access-Control-Allow-Origin': '*',
+        //         'Content-Type': "application/json"
+        //     },
+        //     // proxy: {
+        //     //     host: '190.124.47.67',
+        //     //     port: 5001,
+        //     //     // protocol: 'http'
+        //     // },
+        //     data: JSON.stringify(data)
+        // }
 
-        axios(options)
-            .then(res => {
-                // console.log(res);
-                if (res.status === 200) {
-                    alert('Ваше повідомлення успішно надіслано');
+        //     axios(options)
+        //         .then(res => {
+        //             console.log(res);
+        //             if (res.status === 200 && res.data.code === 200) {
+        //                 alert('Ваше повідомлення успішно надіслано');
+        //             } else {
+        //                 console.log(res.data.status);
+        //                 alert('Помилка сервера! Будь ласка, повторіть запит. Status: ' + res.data.status);
+        //             }
+        //         })
+        //         .catch(err => {
+        //             console.log(err.message);
+        //             alert('Помилка сервера! Будь ласка, повторіть запит.' + err);
+        //         });
+
+        axios.defaults.headers.post['Content-Type'] = 'application/json';
+        axios.post('https://formsubmit.co/ajax/ac60ff415d1eaff7b329ccdee0bf4f91',
+            JSON.stringify(data))
+            .then(response => {
+                if (response.data.success === 'true' && response.status === 200) {
+                    setStatusSubmit('success');
                 } else {
-                    console.log(res.status);
-                    alert('Помилка сервера! Будь ласка, повторіть запит.' + res.status);
+                    console.log('Status code: ' + response.status);
+                    setStatusSubmit('error');
                 }
             })
-            .catch(err => {
-                console.log(err.message);
-                alert('Помилка сервера! Будь ласка, повторіть запит.' + err);
+            .catch(error => {
+                console.log(error);
+                setStatusSubmit('error');
             });
     }
+
+    useEffect(() => {
+        if (statusSubmit === 'success') {
+            setMessageSubmit(t('submitForm.success_message'))
+        } else if (statusSubmit === 'error') {
+            setMessageSubmit(t('submitForm.error_message'))
+        } else if (statusSubmit === null) {
+            setMessageSubmit(null)
+        }
+    }, [statusSubmit, i18n.resolvedLanguage])
 
 
     return (
         <section ref={formRef} className="section-form" id="contacts">
             <h1 className="section-form-title">{t("submitForm.title")}</h1>
             <Formik
-                initialValues={{ name: '', company: '', email: '', phone: '', message: '' }}
+                initialValues={{ _subject: 'New Message From The KMKSTROY Site!', _captcha: 'true', name: '', company: '', email: '', phone: '', message: '' }}
                 validationSchema={SubmitFormSchema}
                 onSubmit={(values, { setSubmitting, resetForm }) => {
                     sendEmail(values);
+                    // console.log(values)
                     // setSubmitting(false);
                     resetForm();
+                    setIsMessageSubmit(true);
                 }}
             >
                 {({ values, errors, setFieldValue, handleBlur, touched }) =>
@@ -69,59 +106,75 @@ const SubmitForm = () => {
                             </ul>
                         </div>
                         <div className="form-contact">
-
-                            <Form
-                                className="form">
-                                <p>
-                                    <SubmitFormField label={t("submitForm.label_name")} name="name" id="name" type="text" />
-                                </p>
-                                <p>
-                                    <SubmitFormField label={t("submitForm.label_company")} id="company" name="company" type="text" />
-                                </p>
-                                <p>
-                                    <SubmitFormField label={t("submitForm.label_email")} id="email" name="email" type="email" />
-                                </p>
-                                <p>
-                                    <label
-                                        className={touched.phone && errors.phone ? "error-form" : null}
-                                        htmlFor="phone">{t("submitForm.label_phone")}
-                                    </label>
-                                    <NumberFormat
-                                        onBlur={event => handleBlur(event)}
-                                        className={touched.phone && errors.phone ? "form-field error" : "form-field"}
-                                        id="phone"
-                                        value={values.phone}
-                                        name="phone"
-                                        format="+## (###) ###-##-##" allowEmptyFormatting mask="_"
-                                        onValueChange={(values) => {
-                                            const { value } = values;
-                                            setFieldValue('phone', value);
-                                        }}
-
-                                    />
-                                </p>
+                            <Form className='form'>
+                                <div className={isMessageSubmit ? 'fields-wrapper hidden' : 'fields-wrapper'}>
+                                    <Field type="hidden" name="_subject" id='_subject' value="New Message From The KMKSTROY Site!"></Field>
+                                    <Field type="hidden" name="_captcha" id="_captcha" value="true"></Field>
+                                    <p>
+                                        <SubmitFormField label={t("submitForm.label_name")} name="name" id="name" type="text" />
+                                    </p>
+                                    <p>
+                                        <SubmitFormField label={t("submitForm.label_company")} id="company" name="company" type="text" />
+                                    </p>
+                                    <p>
+                                        <SubmitFormField label={t("submitForm.label_email")} id="email" name="email" type="email" />
+                                    </p>
+                                    <p>
+                                        <label
+                                            className={touched.phone && errors.phone ? "error-form" : null}
+                                            htmlFor="phone">{t("submitForm.label_phone")}
+                                        </label>
+                                        <NumberFormat
+                                            onBlur={event => handleBlur(event)}
+                                            className={touched.phone && errors.phone ? "form-field error" : "form-field"}
+                                            id="phone"
+                                            value={values.phone}
+                                            name="phone"
+                                            format="+## (###) ###-##-##" allowEmptyFormatting mask="_"
+                                            onValueChange={(values) => {
+                                                const { value } = values;
+                                                setFieldValue('phone', value);
+                                            }}
+                                        />
+                                    </p>
+                                    <p className="full">
+                                        <label
+                                            className={touched.message && errors.message ? "error-form" : null}
+                                            htmlFor="message">{t("submitForm.label_message")}
+                                        </label>
+                                        <Field
+                                            as="textarea"
+                                            className={touched.message && errors.message ? "form-field error" : "form-field"}
+                                            id="message"
+                                            name="message"
+                                            rows='5'
+                                        />
+                                    </p>
+                                </div>
+                                {isMessageSubmit && !statusSubmit
+                                    ? <div className="lds-dual-ring submit-form"></div> : isMessageSubmit && statusSubmit && <p className='message-submit'>{messageSubmit}</p>}
                                 <p className="full">
-                                    <label
-                                        className={touched.message && errors.message ? "error-form" : null}
-                                        htmlFor="message">{t("submitForm.label_message")}
-                                    </label>
-                                    <Field
-                                        as="textarea"
-                                        className={touched.message && errors.message ? "form-field error" : "form-field"}
-                                        id="message"
-                                        name="message"
-                                        rows='5'
-                                    />
-                                </p>
-                                <p className="full">
-                                    <button className="form-submit" type="submit">{t("submitForm.button_send")}</button>
+                                    {!isMessageSubmit ?
+                                        <button
+                                            className="form-submit"
+                                            type="submit">
+                                            {t("submitForm.button_send")}
+                                        </button> :
+                                        <button
+                                            className="form-submit"
+                                            onClick={(e) => {
+                                                setIsMessageSubmit(false)
+                                                setStatusSubmit(null)
+                                                e.preventDefault()
+                                            }}>
+                                            {t("submitForm.button_close")}
+                                        </button>
+                                    }
                                 </p>
                             </Form>
                         </div>
                     </div>
-
                 </div>
-
                 )}
             </Formik>
         </section>

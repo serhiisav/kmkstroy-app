@@ -24,11 +24,18 @@
 /* ---------loaders------ */
 
 .lds-dual-ring {
+  &.submit-form {
+    position: absolute;
+    top: calc(50% - 42px);
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
   display: flex;
   width: 80px;
   height: 80px;
   margin: 0 auto;
-  height: 100%;
+  // height: 100%;
   justify-content: center;
   align-items: center;
 }

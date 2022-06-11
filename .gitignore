@@ -10,9 +10,13 @@ package-lock.json
 
 # production
 /build
-server/security
-server/security2
-server/package-lock.json
+server/*.key
+server/*.cnf
+server/*.cer
+server/*.pem
+server_OLD/security
+server_OLD/security2
+server_OLD/package-lock.json
 
 
 # misc

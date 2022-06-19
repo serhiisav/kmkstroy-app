@@ -20,8 +20,9 @@ const SubmitForm = () => {
     const sendEmail = (data) => {
         // const options = {
         //     method: "post",
-        //     // url: "//kmkstroy.com.ua:5001",
-        //     url: "http://localhost:5001/test",
+        //     url: "https://dev.kmkstroy.com.ua:5002/send_mail/",
+        //     // url: "http://127.0.0.1:5002/send_mail/",
+        //     // baseURL:"https://dev.kmkstroy.com.ua",
         //     headers: {
         //         // 'X-Requested-With': 'XMLHttpRequest',
         //         // 'Accept': "application/json",
@@ -31,25 +32,25 @@ const SubmitForm = () => {
         //     // proxy: {
         //     //     host: '190.124.47.67',
         //     //     port: 5001,
-        //     //     // protocol: 'http'
+        //     //     //     // protocol: 'http'
         //     // },
         //     data: JSON.stringify(data)
         // }
 
-        //     axios(options)
-        //         .then(res => {
-        //             console.log(res);
-        //             if (res.status === 200 && res.data.code === 200) {
-        //                 alert('Ваше повідомлення успішно надіслано');
-        //             } else {
-        //                 console.log(res.data.status);
-        //                 alert('Помилка сервера! Будь ласка, повторіть запит. Status: ' + res.data.status);
-        //             }
-        //         })
-        //         .catch(err => {
-        //             console.log(err.message);
-        //             alert('Помилка сервера! Будь ласка, повторіть запит.' + err);
-        //         });
+        // axios(options)
+        //     .then(res => {
+        //         console.log(res);
+        //         if (res.status === 200 && res.data.code === 200) {
+        //             setStatusSubmit('success');
+        //         } else {
+        //             console.log(res.data.status);
+        //             setStatusSubmit('error');
+        //         }
+        //     })
+        //     .catch(err => {
+        //         console.log(err.message);
+        //         setStatusSubmit('error');
+        //     });
 
         axios.defaults.headers.post['Content-Type'] = 'application/json';
         axios.post('https://formsubmit.co/ajax/ac60ff415d1eaff7b329ccdee0bf4f91',

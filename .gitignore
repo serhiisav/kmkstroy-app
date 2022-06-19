@@ -15,9 +15,11 @@ server/*.cnf
 server/*.cer
 server/*.pem
 server_OLD/security
+server/security-dev
 server_OLD/security2
 server_OLD/package-lock.json
-
+robots.txt
+sitemap*
 
 # misc
 .DS_Store

@@ -25,7 +25,6 @@ function getHtmlMessage(req) {
 }
 
 const transport = {
-    // pool: true,
     service: 'Gmail',
     auth: {
         type: 'OAuth2',
@@ -34,10 +33,15 @@ const transport = {
         clientSecret: process.env.REACT_APP_CLIENT_SECRET,
         refreshToken: process.env.REACT_APP_REFRESH_TOKEN,
         accessToken: accessToken,
+        // expires: 1484314697598
     },
+    // tls: {
+    //     rejectUnauthorized: false,
+    // },
 };
 
 const transporter = nodemailer.createTransport(transport);
+
 transporter.verify((error, success) => {
     if (error) {
         console.error("Error verify!: ", error);
@@ -45,7 +49,6 @@ transporter.verify((error, success) => {
         console.log('users ready to mail myself', success);
     }
 })
-
 
 sendToMeRouter.post('/', (req, res, next) => {
 
@@ -69,6 +72,7 @@ sendToMeRouter.post('/', (req, res, next) => {
                 status: 'success',
                 code: 200
             })
+            transporter.close();
         }
     })
 

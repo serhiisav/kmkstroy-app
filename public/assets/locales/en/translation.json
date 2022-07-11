@@ -31,6 +31,7 @@
   },
   "gallery": {
     "title": "OUR WORKS",
+    "download": "Download Reference List",
     "button-load": "Load more",
     "button-isLoading": "Loading...",
     "button-delete": "Delete"
